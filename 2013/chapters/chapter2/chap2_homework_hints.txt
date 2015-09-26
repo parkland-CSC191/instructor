@@ -1,0 +1,38 @@
+-- chapter 2
+-- Hands-on Assignments
+-- query 1
+select
+
+-- query 2
+select
+
+-- query 3
+select
+
+-- query 4
+select
+
+-- query 5
+select
+
+-- query 6
+select
+
+-- query 7
+select
+
+-- query 8
+select
+
+-- query 9
+select
+
+-- query 10
+select
+
+-- Advanced Challenge
+-- query 1
+select
+
+-- query 2
+select

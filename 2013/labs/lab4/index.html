@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>CSC191: Lab 4</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Lab 4</h2>
+
+<p>
+<b><font size="+2">Context</font></b><br>
+This lab covers Chapters 9-11
+<p>
+
+<p>
+<b><font size="+2">Objectives</font></b><br>
+<ul>
+	<li>Determine a set of 5 questions about Kindergarten Lottery data</li>
+	<li>Write, test and present queries that satisfy your 5 questions</li>
+</ul>
+
+<p>
+<b><font size="+2">Background</font></b><br>
+The Champaign public school district has 11 elementary schools. When parents wish to enter their child into kindergarten, they first have to go through this process that has been known by many names, but basically it is "Controlled Choice", or some mistakenly call it "Schools of Choice." The over-simplified idea is that the parent has to choose which schools they like best and tell the school district the order of their preferences. There is no guarantee that you will get your first choice because 700 other parents may want the same school, and there are only spots for 64 students. In the past, this process has been called the "Kindergarten Lottery" for obvious reasons, but the district is trying to move away from that appellation (also for good reasons).
+<p>
+
+The data in the u4lottery database are the real choices made by real parents in the past few years. All names and addresses have been removed, and there is ton of extraneous data that we will not even look at. There is no data model (ERD) - I am tempted to have you guys come up with a data model as the first part of lab 4, but I fear it might take too long. In fact, the tables are a mess because the consultant in Massachusetts doesn't know squat about databases. I have done a little normalization and have created alternate tables (_master, _choice and _applicant), which we will focus on for the sake of simplicity and brevity.
+
+<p>
+<b><font size="+2">Set up Tasks</font></b>
+<ol>
+	<li>read this <a href="http://mysql-dba-journey.blogspot.com/2009/05/installing-oracle-sql-developer-oracle.html">blog post</a> about using mysql with SQL Developer</li>
+	<li>download the <a href="http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.22.zip/from/http://cdn.mysql.com/">J Connector</a>
+	<li>unzip the file you just downloaded in an easy-to-remember location</li>
+	<li>in SQL Developer, change your 3rd-party preferences to point to the mysql j connector jar file (follow directions from the blog for details)</li>
+	<li>connect to the database</li>
+	<ul>
+		<li>username: sacrophy_reader</li>
+		<li>password: r#8d#r</li>
+		<li>hostname: mysql.cb-pta.com</li>
+		<li>port: 3306 (default)</li>
+		<li>Choose database: u4lottery</li>
+	</ul>
+</ol>
+
+<p>
+<b><font size="+2">Development</font></b>
+<ul>
+	<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdGc1M1hkbUlxaERsdUtWUmZUYVFaLWc">Red Team</a></li>
+	<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdENSd3IxVTd5SWVBYllQVlJsQXhxZGc">Blue Team</a></li>
+	<li>There are 5 worksheets in each; put one question and one query in each spreadsheet; there are basic instructions on each sheet</li>
+	<li>If you are having a really hard time coming up with questions, I have a few <a href="http://www.csit.parkland.edu/~cschultz/csc191/labs/lab4/sample_questions.html">samples</a> for you to think about</li>
+	<li>To run the query, I have developed a java function to read your query, run against the mysql database, and then print the results on the spreadsheet. I am not sure if students have access to the java function, buy you can try (Tools -> Script Editor -> runQuery()).</li>
+</ul>
+
+<p>
+<b><font size="+2">Homework</font></b><br>
+Read Chapter 12 "Subqueries". If you are really bored, start doing the Hands-On Exercises. :)
+
+
+<p>
+<a href="http://www.csit.parkland.edu/~cschultz/csc191/labs/lab4/complex_question_query.html">bonus</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+set names utf8;
+create table people (peopleid   int not null primary key,  
+                     first_name varchar(30)
+                          check (first_name = upper(first_name)),
+                     surname    varchar(30) not null
+                          check (surname = upper(surname)),
+                     born       numeric(4) not null
+                                check (born >= 1850),             
+                     died       numeric(4) check (died >= 1895),  
+	                  unique (first_name, surname));
+create table countries(country_code  char(2) not null primary key,
+                       country_name  varchar(50) not null,
+                       continent     varchar(20),
+                       unique(country_name));
+create table movies (movieid        int not null primary key,
+                     title          varchar(60) not null,
+                     country        char(2) not null,
+                     year_released  numeric(4) not null
+                                    check(year_released >= 1895),
+                     unique (title, country, year_released),
+                     foreign key(country)
+                       references countries(country_code));
+insert into countries(country_code, country_name, continent)
+values('us', 'United States', 'AMERICA'),
+      ('in', 'India', 'ASIA'),
+      ('gb', 'United Kingdom', 'EUROPE'),
+      ('it', 'Italy', 'EUROPE');
+insert into movies(movieid, title, country, year_released)
+values (123, 'L''Avventura', 'it', 1960);

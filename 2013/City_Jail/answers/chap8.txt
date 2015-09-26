@@ -1,0 +1,46 @@
+-- chapter 8
+-- Case Study "City Jail"
+
+-- query 1
+select alias from aliases where alias like 'B%';
+ 
+-- query 2
+select crime_id, criminal_id, date_charged, classification from crimes where
+date_charged between '01-OCT-08' and '01-NOV-08';
+ 
+-- query 3
+select crime_id, criminal_id, date_charged, status from crimes where status in
+('CA','IA');
+ 
+-- query 4
+select crime_id, criminal_id, date_charged, classification from crimes where
+classification = 'F';
+ 
+-- query 5
+select crime_id, criminal_id, date_charged, hearing_date from crimes where
+(hearing_date - date_charged) > 14;
+ 
+-- query 6
+select criminal_id, last, zip from criminals where zip = '23510' order by
+criminal_id;
+ 
+-- query 7
+select crime_id, criminal_id, date_charged, hearing_date from crimes where
+hearing_date is null;
+ 
+-- query 8
+select sentence_id, criminal_id, prob_id from sentences where prob_id is not
+null order by prob_id, criminal_id;
+ 
+-- query 9
+select crime_id, criminal_id, classification, status from crimes where
+classification = 'M' and appeal_cut_date is not null;
+ 
+-- query 10
+select charge_id, crime_id, fine_amount, court_fee, amount_paid,
+(fine_amount+court_fee) - amount_paid "BALANCE OWED" from crime_charges where
+(fine_amount+court_fee) > amount_paid;
+ 
+-- query 11
+select officer_id, last, precinct, status from officers where precinct in
+('OCVW','GHNT') and status = 'A' order by precinct, last;

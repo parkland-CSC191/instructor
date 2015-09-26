@@ -1,0 +1,44 @@
+-- chapter 9
+-- Case Study "City Jail"
+
+-- query 1
+select criminal_id, last, first, crime_code, fine_amount
+from criminals
+natural join crimes
+natural join crime_charges;
+
+-- query 2
+select criminal_id, last, first, classification, crimes.status crime_status,
+date_charged,
+ filing_date, appeals.status appeal_status
+from criminals
+natural join crimes
+left outer join appeals using (crime_id);
+
+-- query 3
+select criminal_id, last, first, classification, date_charged,
+ crime_code, fine_amount
+from criminals
+natural join crimes
+natural join crime_charges
+where classification = 'O'
+order by criminal_id, date_charged;
+
+-- query 4
+select criminal_id, last, first, v_status, p_status, alias
+from criminals
+left outer join aliases using (criminal_id)
+order by last, first;
+
+-- query 5
+select last, first, start_date, end_date, con_freq
+from criminals
+natural join sentences
+join prob_contact on ((end_date - start_date) between low_amt and high_amt)
+order by last, first, start_date;
+
+-- query 6
+select officer.last officer_last_name, officer.first officer_first_name, manager.last manager_last_name, manager.first manager_first_name
+from prob_officers officer
+left outer join prob_officers manager on officer.mgr_id = manager.prob_id
+order by officer.last, officer.first;

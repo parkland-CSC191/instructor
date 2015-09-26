@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>CSC191: Final: Lab 5</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Final: Lab 5: Create a homework database</h2>
+
+<p>
+<b><font size="+2">Objectives</font></b><br>
+Students must come up with an ERD, create all necessary tables, populate those tables and generate all sql queries that allow student homework to be submitted, graded and viewed.
+
+<p>
+<b><font size="+2">Context</font></b><br>
+You have been working with "Homework Checker"; this is essentially a php/javascript front-end for a homework database. Your job is to start from scratch and design something similar, using all the knowledge you have learned from this class. You will not be implementing the front-end stuff (php/javascript), but by the end of the class today, you will have a working database that is capable of being used as a backend.
+
+<p>
+
+<p>
+<b><font size="+2">Grading</font></b><br>
+Students will be graded on the following criteria, ranked in order of weight:
+<ul>
+	<li>participation (60%): talking, volunteering to do work, assembling, managing tasks</li>
+	<li>syntax (30%): If you are responsible for a query, make sure it does exactly what it is supposed to do</li>
+	<li>progress (10%): Tackle tasks one at a time. It is more important to do a good job on half the lab than a bad job on all of it</li>
+</ul>
+
+
+</body>
+</html>

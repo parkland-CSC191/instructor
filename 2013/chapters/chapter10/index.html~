@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>CSC 191: Chapter 10 - Single-row functions</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 10 - Single-row functions</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+<li>Today we will be covering Chapter 10
+<ul>
+	<li>Cover (briefly) "single-row" and "functions"</li>
+	<li>Walk through many functions and their use in the Real World&#8482;</li>
+	<li>Highly recommend you have a page open for the <a href="http://download.oracle.com/docs/cd/B28359_01/server.111/b28286/functions001.htm#i88893">Oracle Function Reference Documentation</a></li>
+</ul>
+</ul>
+
+<p>
+
+[10 minute break near 5:00 pm]
+<p>
+
+<b>Intro to Functions</b><br>
+<ul>
+	<li>What is a function in the first place?</li>
+	<li>The Structure of a Function: <br>
+	<span style="font-family: Courier; font-weight: bold">do_something(first_parameter, second_parameter, possible_other parameters)</span></li>
+	<li>Functions always return something</li>
+	<li>Examples of using a hypothetical function:</li>
+	<ul>
+		<li><span style="font-family: Courier;">select <b>do_something(title, second_parameter)</b> from books;</span></li>
+		<li><span style="font-family: Courier;">select title from books where <b>do_something(pubid, second_parameter) > 0</b>;</span></li>
+	</ul>
+</ul>
+<p>
+<br>
+
+<b>What is this business about a "single-row"?</b><br>
+<ul>
+	<li>Looking at the hypothetical example above, if the table <b>books</b> has 14 rows, how many rows will the query return?</li>
+	<li>The function acts upon <b>one and only one</b> row at a time; 14 rows in, 14 rows out</li>
+	<li>That's pretty much it. When we cover Chapter 12 and Group Functions, the contrast will be much more evident. [<b>HINT: Aggregation</b>]</li>
+</ul>
+<p>
+<br>
+
+<b>Rubber meet road. Road, rubber</b><br>
+<ul>
+	<li>So for the rest of our session, we are going to talk about how to determine 1) When to use a single-row function, and 2) which function gets the job done.</li>
+	<li>We are going to do this by going through the Hands-On homework questions for Chapter 10
+	<ol>
+		<li>Figure out which <b><u>type</u></b> of function we need (page 332, Table 10-1)</li>
+		<li>Determine exactly which function we need and how to use it (Summary on pgs 372-376)</li>
+	</ol>
+</ul>
+<p>
+<br>
+
+<b>That wasn't so bad, give me more</b><br>
+<ol>
+	<li>Count the number of objects (dba_objects) that end in 'ts'. Not all objects have the same case.</li>
+	<li>Create a new book where the pubdate was January 1, 2011 3:11 PM</li>
+	<li>Write a query that gives a label to the length of each book's title; if the title is less than 16 characters it should be labeled "Short", if between 16 and 22 characters it should be labeled "Medium", and finally if greater than 22 it should be labeled "Long".</li>
+	<li>Select the region for each customer but spell out the region (ie, 'NW' should be 'Northwest')</li>
+	<li>Select a list of all orders that have only two "words" in the address (<i>shipstreet</i>)</li>
+	<li>Return the first word from the above example</li>
+</ol>
+<p>
+<br>
+
+<b>Some notes about the Chapter</b><br>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr><th>Page</th><th>Notes</th></tr>
+	<tr><td>333</td><td>String functions are mostly for pretty reports</td></tr>
+	<tr><td>339</td><td>Excellent but confusing example of SUBSTR with nested INSTR functions</td></tr>
+	<tr><td>342,357</td><td>The progression from LTRIM -> REPLACE -> TRANSLATE is really good, but I would put REGEXP as the next logical step. REGEXP needs its own space.</td></tr>
+	<tr><td>356</td><td>For a long time, Oracle's own Support website used SYSDATE instead of CURRENT_DATE. :( </td></tr>
+	<tr><td>368</td><td>Read DECODE very carefully and understand it. :)</td></tr>
+	<tr><td>369</td><td>Read CASE even more carefully and understand it. :) (we will talk about these in class)</td></tr>
+</table>
+<p>
+<br>
+
+<b>Slightly more Advanded Topics</b><br>
+<ul>
+	<li>Regular Expressions</li>
+	<ul>
+		<li>More documentation: <a href="http://download.oracle.com/docs/cd/B28359_01/server.111/b28286/functions138.htm#i1239858">REGEXP_SUBSTR Reference</a> and <a href="http://download.oracle.com/docs/cd/B28359_01/server.111/b28286/ap_posix001.htm#i690819">Regular Expressions</a>. Also <a href="http://www.zytrax.com/tech/web/regex.htm#special">POSIX Character Class Definitions</a> (really handy to know)</li>
+		<li>You can do some really slick stuff with regexp, but it is too advanced for this course</li>
+		<li>A great tool for parsing</li>
+	</ul>
+	<li>CASE Expressions</li>
+	<ul>
+		<li><a href="http://download.oracle.com/docs/cd/B28359_01/server.111/b28286/expressions004.htm#SQLRF20037">Documentation</a>: Kinda poor if you ask me - horrible examples.</a>
+		<li>Two ways to write CASE statements</li>
+		<ol>
+			<li>The book has an example of a <b><i>searched</i></b> <b>CASE</b> expression. (pg 369)</li>
+			<li>Note how the <b>WHEN</b> conditions are all the same. To simplify: <br>
+			<pre>
+select empno, lname, fname,
+ round(months_between('01-JUL-09',hiredate)/12,2) "Years",
+ CASE <b>trunc(</b>(months_between('01-JUL-09',hiredate)/12)<b>/4,0)</b>
+   when 0 then 'Level 1'
+   when 1 then 'Level 2'
+   when 2 then 'Level 3'
+   when 3 then 'Level 4'
+   else 'Level 5'
+ end "Retire Level"
+from employees;</pre></li>
+	</ul>
+</ul>
+
+
+<p>
+<br>
+<b>Assignments</b>
+<ul>
+	<li>Chapter 10 Hands-on due by 5:pm Sunday, November 6 (<a href="homework_hints.txt">hints</a>)</li>
+	<li>Chapter 10 Advanced Challenge due by 5:pm Sunday, November 6 (<a href="homework_hints.txt">hints</a>)</li>
+	<li>Read Chapter 11</li>
+</ul>
+
+
+</body>
+<html>

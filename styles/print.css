@@ -1,0 +1,50 @@
+/* $Id: print.css,v 1.1 2005/04/12 19:04:34 jason Exp $ */
+
+body {
+  margin: .5in;
+}
+
+@page :left {
+  margin-left: 1in;
+  margin-right: 2in;
+}
+@page :right {
+  margin-left: 2in;
+  margin-right: 1in;
+}
+
+div#header {
+  width: 100%;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+}
+div#header h1 {
+  font-weight: bold;
+}
+div#holder {
+  margin: 1cm;
+}
+div#content {
+  font-size: 12px;
+}
+div#content p {
+  margin-left: .5cm;
+}
+
+div#content h2 h3 {
+  text-align: left;
+}
+div#info {
+  position: relative;
+  font-size: 14px;
+  padding: .1in;
+}
+
+div#footer {
+  font-size: 75%;
+  text-align: center;
+  color: #000;
+}
+

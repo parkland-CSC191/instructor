@@ -1,0 +1,39 @@
+-- chapter 9
+-- my name
+
+-- query 1
+select title, contact, phone
+
+-- query 2
+select order#, firstname, lastname
+
+-- query 3
+select firstname, stname
+
+-- query 4
+select title
+
+-- query 5
+select order#, orderdate, title, total_profit
+
+-- query 6
+select title
+
+-- query 7
+select gift
+
+-- query 8
+select fname, lname
+
+-- query 9
+select title, order#, state
+
+-- query 10
+select emp_fname, emp_lname, job, mgr_fname, mgr_lname
+
+-- Advanced Challenge
+select title, name, profit, gift
+
+select
+minus
+select

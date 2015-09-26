@@ -1,0 +1,58 @@
+-- query 1
+insert
+
+-- query 2
+update
+
+-- query 3
+commit your work
+
+-- query 4
+insert
+-- use comments to describe the error
+
+-- query 5
+insert
+-- use comments to describe the error
+
+-- query 6
+update
+-- You will get red on this. That is ok and expected
+
+-- query 7
+
+-- query 8
+undo your work
+
+-- query 9
+delete
+
+-- query 10
+undo your work
+
+-- Advanced Challenge
+create table
+
+-- NOTE: Yes, it would be easier to use substitution variables, that is the whole point :)
+-- But homework checker cannot yet handle sub vars. Sorry.
+insert
+insert
+insert
+insert
+insert
+insert
+insert
+insert
+
+commit your work
+
+alter table
+
+-- use substitution variables
+update
+
+alter table
+
+commit your work
+
+alter table

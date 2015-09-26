@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>CSC 191: Lab 3</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+	background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Lab 3</h1>
+
+<span style="font-size:125%; font-weight:bold">Covers chapters 5-7 (DML (insert,update,delete), transaction control, indexes, synonyms, sequences, user and role management))</span>
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Objective</span>
+<br>
+Lab 3 explores the concepts covered in the previous chapters by way of a <b><i>role-playing</i></b> example.
+The lab is meant to be collaborative; each member should contribute to the success of the group.
+It is expected that there will be natural leaders in any given group; be sure to avoid having one group member do all the talking and/or typing. Each group will be working on the same tasks.
+Note that most bullet points can be done in parallel, meaning that one member of the group can work on a specific task while other members work on other tasks. But not <i>all</i> tasks can be done in parallel.
+As with normal CSC 191 classes, individual participation counts towards your grade.
+<p>
+[NOTE: it is highly recommended that each group member read this entire lab before touching a keyboard. This is a good habit to get into, especially as the labs get more difficult]
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Background</span>
+<br>
+It's been a busy month. 3 people have newly been charged with crimes and their cases are making their way through the justice system. A probation officer has moved, and some of the crime codes have changed or are new.
+<p>
+The tasks below represent the high-level objectives; you will have to determine the intermediate steps to take in order to successfully complete these tasks. All data entry must be done using the php webapp (see Links below).
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Teams</span>
+<br>
+I will assign students to various departments (as listed on page 242) at the beginning of class
+<p>
+
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Tasks</span>
+<ol>
+	<li><b>New criminals</b> <br>
+	Enter the three criminals found on page 172.<p></li>
+
+	<li><b>Assign crime charges to each of the new criminals</b> <br>
+	You are free to make up any valid charges that can successfully be inserted against the three new criminals from #1 - one of the charges must be 'Arson'<p></li>
+
+	<li><b>Alter fees for 'Bomb Threat'</b> <br>
+	Sorry, but 'Bomb Threats' are not free<p></li>
+
+	<li><b>Pam Schocks has moved</b> <br>
+	Change the precinct and phone number for officer Pam Shocks<p></li>
+
+	<li><b>Penny Statin is no longer a criminal</b> <br>
+	Remove Penny Statin from the CRIMINALS table<p></li>
+
+	<li><b>Changes to crime codes</b><br>
+	<ol type="a">
+		<li>Change 'Agg Assault' to 'Aggravated Assault'</li>
+		<li>Remove 'Burglary-Business'</li>
+		<li>Add 'Arson'</li>
+	</ol><p></li>
+
+	<li><b>Criminal Reed Pints is declared 'not guilty'</b><br>
+	Make the necessary changes so that the charge status for criminal Reed Pints reflects his innocence<p></li>
+
+	<li><b>Two crimes being appealed</b><br>
+	Add an appeal for criminals Jim Fenter and Pat Dabber<p></li>
+
+	<li><b>New Chief Probation Officer</b><br>
+	<ol type="a">
+		<li>New Probation officer with no manager (your choice for name, etc)</li>
+		<li>The two existing probation officers with no manager must report to this new one</li>
+	</ol><p></li>
+
+	<li><b>Assign a probation officer to criminal Sam Phelps</b><br>
+	Make sure Sam is being watched by the Chief Probation Officer</li>
+
+</ol>
+<br>
+<p>
+
+
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Hints</span>
+<ol>
+	<li>Identify which department the task belongs to (page 242)</li>
+	<li>Write queries against your own schema first</li>
+	<li>Figure out what privileges are required to execute your query against the TEACHER schema; some of you still have to catch up from Chapter 7</li>
+	<li>Ask instructor to execute the grant statements to a role</li>
+	<li>Utilize the php webapp to make changes to the TEACHER data (obviously only works for some tasks, as not all of the php pages are complete)</li>
+</ol>
+<p>
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">What to have at the end</span>
+<br>
+At the end of this lab, each group should have one sql file (aka, script) that executes all the queries necessary to duplicate the tasks identified for the group.
+<p>
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Links</span>
+<table border="1" cellspacing="5" cellpadding="5">
+	<tr>
+		<td>The report I will run at the end of the Lab to check work</td>
+		<td><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdGlFMXd3d2tRUzhUX0t2dlJ5U2huUFE">https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdGlFMXd3d2tRUzhUX0t2dlJ5U2huUFE</a></td>
+	</tr>
+	<tr>
+		<td>The stuff you all did for Chapter 7 homework</td>
+		<td><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdHd6WFBZVENzUnoyMUZlYkN1N3k4dkE">https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdHd6WFBZVENzUnoyMUZlYkN1N3k4dkE</a></td>
+	</tr>
+	<tr>
+		<td>The php WebApp</td>
+		<td><a href="http://onyx.csit.parkland.edu/~oracle/csc191/lab3.city_jail/CRIMINALS.php">http://onyx.csit.parkland.edu/~oracle/csc191/lab3.city_jail/CRIMINALS.php</a></td>
+	</tr>
+	<tr>
+		<td>City Jail ERD</td>
+		<td><a href="https://docs.google.com/drawings/d/1tZ4_kzIA-Mb_CHufhY_fbNJURjENgFmADSJ-CmiMTok/edit">https://docs.google.com/drawings/d/1tZ4_kzIA-Mb_CHufhY_fbNJURjENgFmADSJ-CmiMTok/edit</a></td>
+	</tr>
+	<tr>
+		<td>Lab 3 worksheet (where to save your queries)</td>
+		<td><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdDh2anNGVDNLaDRVNVpSaW85VzdDcHc">https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdDh2anNGVDNLaDRVNVpSaW85VzdDcHc</a></td>
+	</tr>
+</table>
+
+
+
+</body>
+<html>

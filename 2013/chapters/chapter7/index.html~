@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>CSC 191: Chapter 7 - USERS and ROLES</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 7 - USERS and ROLES</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+<li>Today we will be covering Chapter 7
+<ul>
+	<li>Users
+	<li>Roles
+	<li>With a sprinkling of passwords and how to find metadata about privs
+</ul>
+</ul>
+
+<p>
+
+[10 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 7</b>
+
+<p>
+<br>
+<b>Assignments</b>
+<ul>
+<li>Chapter 7 Hands-on due by 5:pm Sunday, October 9 (submitted via email)
+<li>Read Chapter 8
+</ul>
+
+</body>
+<html>

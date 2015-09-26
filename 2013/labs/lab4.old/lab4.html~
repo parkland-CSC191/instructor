@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>CSC191: Lab 4</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Lab 4</h2>
+
+<h3>Context</h3>
+This lab covers Chapters 9-11
+<p>
+
+<h3>Objectives</h3>
+TBA
+
+
+<p>
+<b><font size="+2">Requests</font></b><br>
+The following work requests have been submitted:
+<table border="1" cellpadding="5" cellspacing="5">
+	<tr><th>Item#</th><th>Description</th></tr>
+	<tr><td><a href="demo1.sql">DEMO1</a></td><td>
+			Create logins for all customers<br>
+			login: first initial + last name<br>
+			password: first three <b><i>letters</i></b> of the address + zip code backwards<br>
+			If they have placed an order, use shipstreet. Otherwise use address. Only one shipstreet per customer</td></tr>
+	<tr><td><a href="demo2.sql">DEMO2</a></td><td>Find the average length of author's first and last names for all books sold per region. Sort by compass value (of region)</td></tr>
+	<tr><td>1</td><td>Which author sells the most books? Display all authors and the number of books they sell.</td></tr>
+	<tr><td>2</td><td>Create a list that shows which books are more profitable than the overall average profit (for the entire bookstore). The output should also display which category the book belonds to, and be sorted from most profitable category to least.</td></tr>
+	<tr><td>3</td><td>Show stats for how many books sold, total profit and number of customers placing orders per day.</td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+SELECT DISTINCT
+       c.code_desc prop_type,
+       c2.code_desc prop_stat_desc,
+       a.lupdate prop_stat_dt,
+       a.acct AS acct_no,
+       a.spon_awd,
+       p.prop_no,
+       p.ProjId,
+       p.ProjNumber,
+       p.CreatedInDevelopment,
+       o.SubmitDate,
+       o.SubmitedBy,
+       inst_no,
+       a.proj_title,
+       pp_st_dt,
+       pp_end_dt,
+       a.app_st_dt,
+       a.app_end_dt,
+       sp.spon_name,
+       unit_name,
+       NVL (f.lname, ' ') lname,
+       NVL (f.fname, ' ') fname,
+       NVL (f.mi, ' ') mi,
+       (SELECT /*+ qb_name(projID_1) */ COUNT ('')
+          FROM uillinois.securityAccessLogLive
+         WHERE projId = p.projid)
+          userCnt,
+       CASE
+          WHEN (SELECT /*+ qb_name(projMain_case_1) */ COUNT (inPta.hacct_no)
+                       + COUNT (inPja.projNumber)
+                          cnt
+                  FROM uillinois.projMain inP
+                       JOIN uillinois.proposal inA
+                          ON     inP.prop_no = inA.prop_no
+                             AND inP.inst_code = inA.inst_code
+                             AND inP.SYSTEM = inA.SYSTEM
+                       LEFT JOIN uillinois.pt_acct inPta
+                          ON inPta.prop_no = inP.prop_no
+                             AND inPta.inst_code = inP.inst_code
+                       LEFT JOIN uillinois.projMainXref inPjx
+                          ON inPjx.projid = inP.projid
+                          ON     inP.prop_no = inA.prop_no
+                             AND inP.inst_code = inA.inst_code
+                             AND inP.SYSTEM = inA.SYSTEM
+                       LEFT JOIN uillinois.pt_acct inPta
+                          ON inPta.prop_no = inP.prop_no
+                             AND inPta.inst_code = inP.inst_code
+                       LEFT JOIN uillinois.projMainXref inPjx
+                          ON inPjx.projid = inP.projid
+                       LEFT JOIN uillinois.projMain inPja
+                          ON inPja.projid = inPjx.child_projid
+                             AND inPja.SYSTEM IN
+                                    ('AWD', 'PM')
+                 WHERE     inP.SYSTEM = 'PT'
+                       AND inP.inst_code = 'ILLINOIS'
+                       AND inP.projnumber = p.projnumber) >''
+          THEN
+             'a'
+          ELSE
+             'b'
+       END
+          OtherAccounts
+  FROM                            uillinois.projmain p
+                               JOIN
+                                  uillinois.proposal a
+                               ON     p.prop_no = a.prop_no
+                                  AND p.inst_code = a.inst_code
+                                  AND p.SYSTEM = a.SYSTEM
+                            JOIN
+                               uillinois.pt_unit pu
+                            ON     pu.prop_no = a.prop_no
+                               AND pu.inst_code = a.inst_code
+                               AND pu.prim = '1'
+                         JOIN
+                            uillinois.unit u
+                         ON u.unit_code = pu.unit_code
+                            AND u.inst_code = pu.inst_code
+                      JOIN
+                         uillinois.proppds d
+                      ON     d.prop_no = a.prop_no
+                         AND d.inst_code = a.inst_Code
+                         AND d.first_pd = '1'
+                   JOIN
+                      uillinois.faculty f
+                   ON d.unique_id = f.unique_id
+                JOIN
+                         AND d.inst_code = a.inst_Code
+                         AND d.first_pd = '1'
+                   JOIN
+                      uillinois.faculty f
+                   ON d.unique_id = f.unique_id
+                JOIN
+                   uillinois.sponspas sp
+                ON sp.spon_code = a.spon_code AND sp.inst_code = a.inst_code
+             LEFT JOIN
+                uillinois.ProjObject o
+             ON p.ProjID = o.ProjID AND o.ObjectType = '1'
+          LEFT JOIN
+             uillinois.codetab c
+          ON a.prop_type = c.codeid
+       LEFT JOIN
+          uillinois.codetab c2
+       ON a.prop_stat = c2.codeid,
+       (SELECT /*+ qb_name(projMain_2) */ ProjID,
+               ' ' EditAccess,
+               ' ' ViewAccess,
+               ' ' DeleteAccess
+          FROM uillinois.projmain
+         WHERE SYSTEM ='PT' AND inst_code = 'ILLINOIS') r
+ WHERE     p.SYSTEM = 'PT'
+       AND a.inst_code = 'ILLINOIS'
+       AND p.projId = r.projId
+       AND EXISTS
+              (SELECT /*+ qb_name(proposal_1) */ ' '
+                 FROM    uillinois.projmain pm
+                      JOIN
+                         uillinois.proposal pr
+                      ON pr.prop_no = pm.prop_no
+                         AND pr.inst_code = pm.inst_code
+                WHERE pm.projid = p.projid
+                      AND UPPER (pr.spon_awd) = UPPER ('11G6517000')
+               UNION
+               SELECT /*+ qb_name(projmain_3) */ ' '
+                 FROM    uillinois.projmain pm
+                      JOIN
+                         uillinois.pd_grc_bgt pd
+                      ON     pd.prop_no = pm.prop_no
+                         AND pd.inst_code = pm.inst_code
+                         AND pd.Rec_Type = '3'
+                WHERE pm.projid = p.projido
+                      AND UPPER (pd.awardNum) = UPPER ('11G6517000')
+               UNION
+               SELECT /*+ qb_name(ProjMainXref_1) */ ' '
+                 FROM uillinois.ProjMainXref x
+                      JOIN uillinois.PMAward pm
+                         ON pm.ProjID = x.ProjID
+                            OR pm.ProjID = x.Child_ProjID
+                      JOIN uillinois.PMAwardInc i
+                         ON pm.AwardID = i.AwardID
+                WHERE (x.ProjID = p.projid OR x.Child_ProjID = p.projid)
+                      AND (UPPER (pm.AwardNumber) = UPPER ('11G6517000')
+                           OR UPPER (i.AwardNumber) = UPPER ('11G6517000')))
+;
+

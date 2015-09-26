@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>CSC191: Lab 1: Setup</title>
+<base href="http://www.csit.parkland.edu/~cschultz/csc191/labs/howto/">
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Lab 1: Setup</h2>
+
+This document is to familiarize the student with two tools used in CSC 191:
+<ul>
+ <li><a href="#sq_main">SQL Developer</a></li>
+ <li><a href="#hc_main">Homework Checker</a></li>
+</ul>
+
+<hr size="3">
+
+<h2><a name="sq_main" />SQL Developer</h2>
+SQL Developer is a tool produced by Oracle to aid in writing SQL statements. We will be using it a lot in this class, so the sooner you can dig into it, the better.
+<ol><b>Summary of steps</b>
+<li><a href="#sq_1">Install Java Development Kit (JDK) if needed</a></li>
+<li><a href="#sq_2">Install SQL Developer</a></li>
+<li><a href="#sq_3">Configure SQL Developer</a></li>
+<li><a href="#sq_4">Connect to database</a></li>
+</ol>
+<p>
+<p>
+
+<b><a name="sq_1" />1. Install Java Development Kit (JDK)</b><br>
+If you do not have a Java SDK already (and you probably do not), you can download it: 
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><p>
+
+<b><i>Copy the location of the SDK and save it for later (in a few steps).</i></b> <p>
+
+<b><a name="sq_2" />2. Install SQL Developer</b><br>
+	Next, you can download SQL Developer: <a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html">http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html</a><br>
+	[note: if you are unable to get the above link, I have mirrored it <a href="http://www.csit.parkland.edu/~cschultz/csc191/resources/install_sqldeveloper.htm">here</a> ]
+	<p>
+
+Select the version which corresponds to your operating system <b>and</b> does not contain java. For example, one of the following:
+<ul>
+	<li>Oracle SQL Developer for 32-bit Windows (This zip does not include a JDK)
+	<li>Oracle SQL Developer for 64-bit Windows (This zip does not include a JDK) 
+	<li>Oracle SQL Developer for Mac OS X platforms (This zip does not include a JDK)
+</ul
+<p>
+
+After downloading, open the zip file and extract it.<br>
+<img src="images/screen_1.png"><p>
+
+I extracted to c:\, but you can choose your favorite destination.<br>
+<img src="images/screen_2.png"><br>
+<img src="images/screen_3.png"><p>
+
+<b><a name="sq_3" />3. Configure SQL Developer</b><br>
+After the files have been extracted, the window containing the new folder will pop up. Open it and click on  SQL Developer.exe. SQL Developer needs to configure a few items before we officially start to use it. The first box asks you to locate the Java SDK. If you copied the location from above, you can paste it here<br>
+<img src="images/screen_5.png"><p>
+
+After that, SQL Developer comes to life and you are presented with the "file association box". I usually elect to associate SQL Developer with all the files:<br>
+<img src="images/screen_6.png"><p>
+
+Finally, SQL Developer is up and running.<br>
+<img src="images/screen_7.png"><p>
+
+<b><a name="sq_4" />4. Connect to database</b><br>
+We will be connecting to a database hosted by Parkland.<br>
+<table border=1 cellpadding="4">
+<tr><td><b>Connection Name</b></td><td>CSC191</td><td>Note: Completely arbitrary, call it whatever you want</td></tr>
+<tr><td><b>Username</b></td><td>same as parkland/angel</td><td></td></tr>
+<tr><td><b>Password</b></td><td>Username with "#" at the end</td><td></td></tr>
+<tr><td><b>Hostname</b></td><td>onyx.csit.parkland.edu</td><td></td></tr>
+<tr><td><b>Port</b></td><td>35099</td><td></td></tr>
+<tr><td><b>SID</b></td><td>CSC191</td><td></td></tr>
+</table><p>
+
+In the left-hand pane, either click on the green plus sign or right-click on the icon to the right of the word "Connections".<br>
+<img src="images/screen_8.png"><p>
+
+Enter the information from the above table into the "New / Select Database Connection" wizard, then click "Connect".<br>
+<img src="images/screen_9.png"><p>
+
+And Viola, you are now connected (provided no errors occurred)! There is an example of using SQL Developer in Appendix B of the book.
+
+<hr size="3">
+
+<h2><a name="hc_main" />Homework Checker</h2>
+The impatient can go here (now and come back later to read): <a href="http://onyx.csit.parkland.edu/~oracle/csc191/">http://onyx.csit.parkland.edu/~oracle/csc191/</a><p>
+
+The Homework Checker does what it says it does; it checks homework. The goal of this little application is to give students immediate feedback. Please keep in mind that I <b><i>strongly recommend</i></b> that students <b>start with SQL Developer</b>, and <i>then</i> check homework as a last step - it is much cleaner than working on one question, submitting it, then working on the next question, submitting it, etc. <br>
+NOTE: It is built on PHP (which I am still learning). <p>
+
+
+<ol><b>Summary of actions</b>
+<li><a href="#hc_1">Overview</a></li>
+<li><a href="#hc_2">Checking homework</a></li>
+<li><a href="#hc_3">Resetting Tables</a></li>
+<li><a href="#hc_4">Viewing previously submitted homework</a></li>
+</ol>
+
+
+<b><a name="hc_1" />1. Overview</b><br>
+<img src="images/hc_screen_1.png"><p>
+
+The main screen has a login section, followed by three "action" sections; <a href="#hc_2">Checking homework</a>, <a href="#hc_2">Resetting Tables</a> and <a href="#hc_2">Viewing previously submitted homework</a>. The login is the same used to connect to the database via SQL Developer, and it is used for each of the three sections.<p>
+
+<b><a name="hc_2" />2. Checking Homework</b><br>
+The "Query" textbox allows the student to enter in a group of queries to be executed against the database, and then checks them against a static answer. <p>
+
+The very first line denotes the chapter number. By default, the textbox shows "-- demo":<br>
+<img src="images/hc_screen_2.png"><p>
+
+Two dashes ("--") denote a comment and are ignored when running sql. When you submit homework, you will put the chapter number first, like so:<br>
+<img src="images/hc_screen_3.png"><p>
+
+The next line is "-- query 1". Please demark each individual query so that if I have a question when grading your homework, I can easily determine which question is which. <p>
+
+<b>A special note when copy'n'pasting from another document.</b> If you happen to copy from a Microsoft document (Word, notepad, wordpad, etc), watch out for "smart quotes", special quotation marks that have curly tips. If you paste these into the homework checker, they we not be interpretted as "normal" quotes and will cause an error. <p>
+
+Also, sometimes lines of text get squished together - make sure your queries are on seperate lines. <p>
+
+When you have entered all your queries into the textbox, hit "Check it!". The tables associated with the chapter will be reloaded and the queries will run. The result page will show a green background if your results match the answers, otherwise the background will be red and the appropriate error will be displayed. <p>
+
+Following is an example when running the "demo":<br>
+<img src="images/hc_screen_4.png"><p>
+
+You can click on the "query" links in the <b>Output</b> column to see the results of the query:<br>
+<img src="images/hc_screen_5.png"><p>
+
+<b><a name="hc_3" />3. Resetting Tables</b><br>
+<img src="images/hc_screen_6.png"><p>
+
+As the semester progresses, the list of Chapters to reset to will grow larger. You will probably never need to reset your tables, as they are automatically reset each time you submit homework. But if you wish to reset your tables when working in SQL Developer, this is one quick easy way to do it. <p>
+
+<b><a name="hc_4" />4. Viewing previously submitted homework</b><br>
+<img src="images/hc_screen_7.png"><p>
+
+Clicking on "View" will display everything you have submitted sorted by date in reverse order (most recent first, or LIFO). Thus by the end of the semester, your list of queries may be quite long.
+
+
+</body>
+</html>

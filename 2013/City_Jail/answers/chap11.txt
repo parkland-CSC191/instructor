@@ -1,0 +1,83 @@
+-- chapter 11
+-- Case Study "City Jail"
+
+-- query 1
+-- poorly worded question; perhaps want the total number of crimes per officer?
+select avg(count(crime_id)) from crime_officers group by officer_id;
+
+-- query 2
+select status, count(*) from crimes group by status;
+
+-- query 3
+-- poorly described on page 393-394
+select max(count(*)) from crimes group by criminal_id;
+
+-- query 4
+-- ignore NULL values
+select min(fine_amount) from crime_charges;
+
+-- query 5
+select criminal_id, last, first
+from criminals
+natural join sentences
+group by criminal_id, last, first
+having count(*) > 1;
+
+-- query 6
+-- natural join does not work - joins on too many columns
+select precinct, count(*)
+from crime_charges
+join crimes using (crime_id)
+join crime_officers using (crime_id)
+join officers using (officer_id)
+where charge_status = 'GL'
+group by precinct
+having count(*) > 3;
+
+-- query 7
+select classification,
+       sum(fine_amount) + sum(court_fee) collections,
+       sum(fine_amount) + sum(court_fee) - sum(amount_paid) total_owed
+from crimes
+natural join crime_charges
+group by classification;
+
+-- the "answers" from here on our varied widely. I just gave up and threw in the kitchen sink.
+
+-- query 8
+select classification, charge_status, count(*)
+from crimes
+natural join crime_charges
+group by grouping sets ((classification, charge_status), ());
+       
+-- query 9a
+-- the data makes it really hard to see the difference - need better data
+-- also, the question is extremely confusing
+select classification, charge_status, count(*)
+from crimes
+natural join crime_charges
+group by grouping sets ((classification, charge_status),(classification),
+(charge_status), ());
+
+-- query 9b
+select classification, charge_status, count(*)
+from crimes
+natural join crime_charges
+group by grouping sets ((classification, charge_status), ())
+union
+select classification classification, ' ' charge_status, count(*)
+from crimes
+natural join crime_charges
+group by grouping sets (classification)
+union
+select ' ' classification, charge_status charge_status, count(*)
+from crimes
+natural join crime_charges
+group by grouping sets (charge_status);
+
+-- query 10
+-- wow, what the heck does this question mean?!?
+select classification, charge_status, count(*)
+from crimes
+natural join crime_charges
+group by rollup (classification, charge_status);

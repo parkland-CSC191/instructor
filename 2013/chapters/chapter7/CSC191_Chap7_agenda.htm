@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>CSC 191: Chapter 7 - USERS and ROLES</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 7 - USERS and ROLES</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+<li>Today we will be covering Chapter 7
+<ul>
+	<li>Users
+	<li>Roles
+	<li>With a sprinkling of passwords and how to find metadata about privs
+</ul>
+</ul>
+
+<p>
+
+[10 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 7</b><br>
+<ul>
+	<li>Get students into 3 groups again (<a href="http://www.csit.parkland.edu/~cschultz/csc191/labs/lab2/lab2_teams.html">teams</a>).
+	<li>Pop Quiz: Why is it important to grant specific privileges to different users?
+	<li>What is the benefit of using roles?
+	<li>We will be working through the Advanced Challenge (page 241) together.
+	<li>Make sure you are connected to the <b>CHAP7</b> database with the <a href="http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ase_15.0.sag1/html/sag1/sag1583.htm">SSO</a> account.
+	<ol>
+		<li>First step: list all the tables your group needs access to
+		<li>Create a user for each member of your group (first initial + last name). When the user is created, make sure the password is set to expire.
+	</ol>
+	<li>At this point, you cannot yet connect with the newly created user. Why not?
+	<li>Discuss differences between <b><i>system</i></b> and <b><i>object</i></b> privileges.
+	<ol start=3>
+		<li>Grant the necessary <i>system</i> privilege to allow the user to connect
+		<li>Try to login with the user accounts
+	</ol>
+	<li>At this point, those using SQL Developer will get an error (password has expired).
+	<ol start=5>
+		<li>Request your SSO to reset your password
+		<li>SSOs are to explain what they are going to do
+		<li>Try to login with the user accounts
+	</ol>
+	<li>We now have a valid user that can connect, but it cannot actually DO anything. Try to select from a table or update a record.
+	<ol start=8>
+		<li>list all the privileges we need to assign to the role
+		<li>Have one person create a role for the group
+		<li>Grant all the necessary privs to the role (ok to divide this work up)
+		<li>Assign the role to your user account
+	</ol>
+	<li>Now how do we actually view all the privileges that this user has?
+</ul>
+
+<p>
+<b>A few notes about the homework</b><br>
+<ol>
+	<li>
+Question 6 of the homework bears a little more explanation. The author asks you to "determine the privileges currently available to the account". The context is the new user account you will have created. The problem is that, given what you have been taught in this class so far (and from the book), you might not know how to find <b><i>all</i></b> the privileges you have access to. Especially the privs that are buried in roles.
+<p>
+I suggest you write a basic <i>select</i> query against the 3 <b>USER_*</b> views mention in this chapter. It is easiest to do this with 3 separate queries, but it is possible to write one giant query to get all the information at once, if you are so inclined.
+<p>
+<li>
+Since you are all sharing a database, you will have to make sure your newly created users and roles have unique names. For the username, use the suggested nomenclature: first initial + last name. For the role, use something like <b>CUSTOMERREP_[first initial][last initial]</b>.
+<p>
+<li>
+Do all your work in the <b>CHAP7</b> database. You can try in the CSC191 database, but you will have a lot of problems. :)
+</ol>
+
+<p>
+<br>
+<b>Assignments</b>
+<ul>
+	<li>Chapter 7 Hands-on due by 5:pm Sunday, October 9 (submitted via email) (<a href="homework_hints.txt">hints</a>)
+<li>Read Chapter 8
+</ul>
+
+<b>Mission Impossible</b><br>
+For those that want to go above and beyond the homework and yearn for a challenge, check these out:
+<ol>
+	<li>Come up with <b><i>all</i></b> the privileges needed for the SSO account; submit as a sql script
+	<li>Is it possible to create a SSO account in the CSC191 database that cannot "accidentally" alter/drop the TEACHER schema?
+	<li>Is it possible to have Homework Checker check Chapter 7 homework? What needs to be changed?
+</ol>
+
+</body>
+<html>

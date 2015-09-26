@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>CSC 191: week 0</title>
+	<meta name="description" content="CSC 191" />
+	<meta name="keywords" content="sql, class, parkland" />
+	<link href="/~csc191/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="header">
+		<h1><a href="../../">CSC 191</a></h1>
+		<ul id="menu">
+			<li class="active"><a href="../../">home</a></li>
+			<li><a href="../../lessons/">lessons</a></li>
+			<li><a href="../../labs/">labs</a></li>
+		</ul>
+	</div>
+
+	<div id="bar">
+		<div class="wrap">
+			<span class="step">Week 0: Getting the lay of the land</span>
+		</div>
+	</div>
+
+	<div class="wrap">
+		<h3>Goal</h3>
+		<p>This class will help you learn about the Structured Query Language, aka SQL. To do that, you will be immersed into the world of databases and the clients that talk to them, which can seem overwhelming for the first time. This lesson aims to ease you into that environment in bite-sized chunks. At the end of this lesson, you will have hands-on experience with many of the different tools we will use in this class.
+		</p>
+
+		<h3>Objectives</h3>
+		<p><table cellpadding="1">
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td>Check out the <a href="http://edu.konagora.com/">Konagora</a> website; Konagora is a web resource developed by the author and supplements the book. I will be referring to it frequently.</td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td>Understand the roadmap of the book, <i>SQL Success</i> by St&eacute;phane Faroult</td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td>Download and install <a href="https://www.apachefriends.org/index.html">XAMPP</a></td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td>Download and install <a href="http://www.sql-workbench.net/">SQL Workbench</a></td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td>Read the first two chapters of <i>SQL Success</i></td>
+		 </tr>
+		 </table>
+		</p>
+
+		<h3>Details</h3>
+		<h4>Konagora</h4>
+		<p><a href="http://edu.konagora.com/">Konagora</a> has a number of resources for both students and instructors. For those that just want to jump in, the <a href="http://edu.konagora.com/SQLsandbox.php">SQL Sandbox</a> is particularly useful - make sure you "Show/Hide" the tables as well. There are several supplemental features surrounding the book; for example, there are code samples from each chapter, sample databases for all popular types of databases, and a section for Errata (kinda small at the moment). There is a whole section for instructors which you will not see, including a section for taking a SQL test and doing sample homework problems which can be made available on a class-by-class basis.
+
+		<h4>Roadmap of "SQL Success"</h4>
+		<p>Open up the <a href="http://onyx.csit.parkland.edu/~csc191/CSC_191_COURSE_SCHEDULE_FALL_2014.pdf">Course Schedule</a> as you do this. Look at the "Contents" of the book, read or skim the Preface. The first chapter gives a ton of historical context which I feel is outside the scope of this class, but could be useful for those who are completely lost about databases. (By the way, it is perfectly ok to be completely lost - this is an Intro class.) The class starts with Chapter 2; we will cover most but not all of the chapters, and even then, some chapters will only get partial coverage; because the author packs so much into each chapter, our normal pace will aim for half a chapter a week. It is important to note that Chapter 11 provides two examples of writing a very simple web-application, while Chapter 12 goes into more depth and provides more examples. It is my desire to model our Final Project on Chapter 12. We will see how close we get.
+		</p>
+
+		<h4>XAMPP</h4>
+		<p><a href="https://www.apachefriends.org/index.html">XAMPP</a> stands for "Cross-platform Apache + MySQL + PHP + Perl". For this class, you will want to start Apache once, but 99% of your time will be with MySQL, and more specifically, writing queries. You don't have to worry too much about actually managing a database since that is covered in a different class (CSC 192). But inevitably, some of you will explore a little more and figure out how to use MySQL on your own. Likewise, some of you will be more interested in programming and will want to explore how to use PHP and/or perl to write an application to talk to their database.
+		</p>
+
+		<h4>SQL Workbench</h4>
+		<p><a href="http://www.sql-workbench.net/">SQL Workbench</a> is a java-based container client used to talk to various kinds of databases. As a container client, it does not directly have the ability to talk to a database, but rather depends on the java libraries provided by the vendor of each database system. As such, if you want to connect to a mysql database, you will need a mysql jdbc connector. If you want Oracle, postgres, DB2, etc, you need the appropirate driver libraries for each. The purpose of the tool is to help you manage sql queries and provides limited functionality to explore the database.
+
+		Note that there is another product called 'MySQL Workbench', which sounds very similar. It is a very different product meant only for MySQL, but essentially does exaclty the same thing.
+		</p>
+	</div>
+		
+	<div id="footer">
+		<p class="right">Design: Luka Cvrk, <a title="Awsome Web Templates" href="http://www.solucija.com/">Solucija</a></p>
+	</div>
+</body>
+</html>

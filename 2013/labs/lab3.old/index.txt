@@ -1,0 +1,28 @@
+<html>
+<head>
+ <title>JustLee Bookstore</title> 
+ <!- The linked CSS is for browsers that can handle 'link rel' -> 
+ <link rel="stylesheet" href="/~oracle/csc191/stylesheets/global.css" type="text/css"> 
+</head> 
+<body> 
+<h1>JustLee Bookstore</h1> 
+Welcome to the world's largest and most comprehensive online bookstore!
+<hr size="3">
+<form enctype="multipart/form-data" name="actionComs" action="execute.php" method="post" target="output">
+Please login to start buying books<br>
+Username: <input type="text" name="user" />
+Password: <input type="password" name="pword" />
+
+<p>
+<br>
+
+</form>
+
+
+<hr size="3">
+<iframe id="output" name="output" width="100%" height="650">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+</body>
+</html>

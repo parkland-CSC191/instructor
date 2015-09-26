@@ -1,0 +1,30 @@
+Most of you will want the first one. We have version 2 installed in the classroom, but you can use version 3 if you like. There are minor differences between them.
+<p>
+
+Note that Oracle says "Other" platforms (ie, Ubuntu) should use the 32bit, Windows, no JRE version. Don't ask me why - I think they screwed up, but I intend to test it at home.
+<p>
+
+
+<table border="1">
+ <tr>
+  <th>File</th><th>Description</th>
+ </tr>
+ <tr>
+  <td><a href="sqldeveloper-2.1.1.64.45.zip">sqldeveloper-2.1.1.64.45.zip</a></td><td>Version 2, 32bit, Windows, JRE included</td>
+ </tr>
+ <tr>
+  <td><a href="sqldeveloper-2.1.1.64.45-no-jre.zip">sqldeveloper-2.1.1.64.45-no-jre.zip</a></td><td>Version 2, 32bit, Windows, no JRE</td>
+ </tr>
+ <tr>
+  <td><a href="sqldeveloper-3.0.04.34-1.noarch.rpm">sqldeveloper-3.0.04.34-1.noarch.rpm</a></td><td>Version 3, 32bit, RedHat Linux</td>
+ </tr>
+ <tr>
+  <td><a href="sqldeveloper-3.0.04.34-macosx.tar.gz">sqldeveloper-3.0.04.34-macosx.tar.gz</a></td><td>Version 3, 32bit, MacOS</td>
+ </tr>
+ <tr>
+  <td><a href="sqldeveloper-3.0.04.34-no-jre.zip">sqldeveloper-3.0.04.34-no-jre.zip</a></td><td>Version 3, 32bit, Windows, no JRE</td>
+ </tr>
+ <tr>
+  <td><a href="sqldeveloper64-2.1.1.64.45-no-jre.zip">sqldeveloper64-2.1.1.64.45-no-jre.zip</a></td><td>Version 2, 64bit, Windows, no JRE</td>
+ </tr>
+</html>

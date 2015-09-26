@@ -1,0 +1,58 @@
+<?php
+$choice[0] = intval($_GET['choice1']);
+$choice[1] = intval($_GET['choice2']);
+$choice[2] = intval($_GET['choice3']);
+$choice[3] = intval($_GET['choice4']);
+$choice[4] = intval($_GET['choice5']);
+$choice[5] = intval($_GET['choice6']);
+$choice[6] = intval($_GET['choice7']);
+$choice[7] = intval($_GET['choice8']);
+$choice[8] = intval($_GET['choice9']);
+$choice[9] = intval($_GET['choice10']);
+$choice[10] = intval($_GET['choice11']);
+$choice[11] = intval($_GET['choice12']);
+
+$con = mysqli_connect('localhost','cschultz','cschultz#3','cschultz');
+if (!$con) {
+  die('Could not connect: ' . mysqli_error($con));
+}
+
+$sql="insert into 2015_applicant values ()";
+mysqli_query($con,$sql);
+// $applicant_id = mysql_insert_id($con);
+$sql="SELECT LAST_INSERT_ID() last_id";
+$result = mysqli_query($con,$sql);
+$row = mysqli_fetch_array($result);
+$applicant_id = $row['last_id'];
+
+
+foreach ($choice as $key => $value) {
+ if ($value != 0) { 
+  $sql="insert into 2015_choice (applicant_id, selection_number, school_id) values (".$applicant_id.",".$key.",".$value.")";
+  $result = mysqli_query($con,$sql);
+ }
+}
+
+$sql="SELECT a.selection_number, a.school_id, b.school_name FROM 2015_choice a inner join `2015_Sch_names` b on a.school_id = b.school_id WHERE a.applicant_id = '".$applicant_id."'";
+$result = mysqli_query($con,$sql);
+
+echo "Choices for Applicant ID: ".$applicant_id;
+
+echo "<table border='1'>
+<tr>
+<th>Selection Number</th>
+<th>School ID</th>
+<th>School Name</th>
+</tr>";
+
+while($row = mysqli_fetch_array($result)) {
+  echo "<tr>";
+  echo "<td>" . $row['selection_number'] . "</td>";
+  echo "<td>" . $row['school_id'] . "</td>";
+  echo "<td>" . $row['school_name'] . "</td>";
+  echo "</tr>";
+}
+echo "</table>";
+
+mysqli_close($con);
+?>

@@ -1,0 +1,2 @@
+create role account_manager_role;
+grant select 

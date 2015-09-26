@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>CSC 191: Lab 2</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+	background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Lab 2</h1>
+
+<span style="font-size:125%; font-weight:bold">Covers chapters 2-4 (selects, tables, constraints)</span>
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Objective</span>
+<br>
+Lab 2 explores the concepts covered in the previous chapters by way of a <b><i>role-playing</i></b> example.
+The lab is meant to be collaborative; each member should contribute to the success of the group.
+It is expected that there will be natural leaders in any given group; be sure to avoid having one group member do all the talking and/or typing. Each group will be working on the same tasks.
+Note that most bullet points can be done in parallel, meaning that one member of the group can work on a specific task while other members work on other tasks. But not <i>all</i> tasks can be done in parallel.
+As with normal CSC 191 classes, individual participation counts towards your grade.
+<p>
+[NOTE: it is highly recommended that each group member read this entire lab before touching a keyboard. This is a good habit to get into, especially as the labs get more difficult]
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Background</span>
+<br>
+The City commisioners have recently purchased a maximum security facility on the outskirts of town. In addition, it has taken over management of a poorly run juvenile detention operation. The City is asking you to adapt the City Jail database to accomodate these changes and suggest a single table.
+<p>
+In addition, the circuit clerks have been complaining that there is no way to track if convicted citizens are doing community service as a plea bargain. The City is asking that you create a table to track community service.
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">Tasks</span>
+<ol>
+	<li><b>Create JAILS table</b> <br>
+	Determine what columns the JAILS table should have. It must have a primary key called JAIL_ID. All other constraints are at your discretion.<b>*</b></li>
+
+	<li><b>Create SERVICES table</b> <br>
+	Determine what columns the SERVICES table should have. It must have a primary key called SERVICE_ID. All other constraints are at your discretion.<b>*</b></li>
+
+	<li><b>Create a backup table of the SENTENCES table</b> <br>
+	Before any changes are made to the SENTENCES table, create a copy of it.</li>
+
+	<li><b>Alter the SENTENCES table</b> <br>
+	Add appropriate columns and constraints to relate to the two new tables (JAILS and SERVICES).</li>
+
+	<li><b>Create a query to list the hours and descriptions of all community services</b></li>
+
+	<li><b>Determine what year all criminals were charged in</b><br>
+	Create a query that displays the relevant information, then provide the answer by looking at the results.</li>
+
+	<li><b>Restore the SENTENCES table</b><br>
+	This task involves several sub-tasks.
+	<ol type="a">
+		<li><b>Before</b> doing anything, discuss what it means to restore a table and how your group is going to accomplish this task</li>
+		<li>Communicate your plan to the instructor</li>
+		<li>Execute your plan</li>
+	</ol></li>
+
+</ol>
+<p>
+<b>*</b>NOTE: Please tell instructor when Task #1 and #2 are done.
+<br>
+
+
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">What to have at the end</span>
+<br>
+At the end of this lab, each group should have one sql file (aka, script) that executes all the queries necessary to duplicate the tasks identified for the group.
+<p>
+<p>
+
+<span style="font-size:125%; font-weight:bold; font-style:underline">PS</span>
+<br>
+Blue Team: <a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdFVxZjZTMFhqSGhMZktKOVEzMHhnc0E">https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdFVxZjZTMFhqSGhMZktKOVEzMHhnc0E</a> <br>
+Red Team: <a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdF9kdGRYa1cxTXhmOHRRejA2SnNwYUE">https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdF9kdGRYa1cxTXhmOHRRejA2SnNwYUE</a>
+
+
+</body>
+<html>

@@ -1,0 +1,27 @@
+How many of each school did each income level choose?
+
+Produce a format that is compatible with Google Charts: https://drive.google.com/previewtemplate?id=0AoFkkLP2MB8kdHVSUFI1NEwtNHFWNzRCVlVnUUE0a1E&mode=public&gid=5
+
+
+query
+select name as "School", 
+ ifnull(grp1_cnt,0) as "$1,604 or le",
+ ifnull(grp2_cnt,0) as "$1,605 - $2,",
+ ifnull(grp3_cnt,0) as "$2,160 - $2,",
+ ifnull(grp4_cnt,0) as "$2,715 - $3,",
+ ifnull(grp5_cnt,0) as "$3,270 - $3,",
+ ifnull(grp6_cnt,0) as "$3,825 - $4,",
+ ifnull(grp7_cnt,0) as "$4,380 - $4,",
+ ifnull(grp8_cnt,0) as "$4,935 - $5,",
+ ifnull(grp9_cnt,0) as "$5,490 or ab"
+from 2011_master
+ left outer join (select ch1sch, count(*) grp1_cnt from 2011_DETAIL where income = '$1,604 or le' group by ch1sch) grp1 on (school_id = grp1.ch1sch)
+ left outer join (select ch1sch, count(*) grp2_cnt from 2011_DETAIL where income = '$1,605 - $2,' group by ch1sch) grp2 on (school_id = grp2.ch1sch)
+ left outer join (select ch1sch, count(*) grp3_cnt from 2011_DETAIL where income = '$2,160 - $2,' group by ch1sch) grp3 on (school_id = grp3.ch1sch)
+ left outer join (select ch1sch, count(*) grp4_cnt from 2011_DETAIL where income = '$2,715 - $3,' group by ch1sch) grp4 on (school_id = grp4.ch1sch)
+ left outer join (select ch1sch, count(*) grp5_cnt from 2011_DETAIL where income = '$3,270 - $3,' group by ch1sch) grp5 on (school_id = grp5.ch1sch)
+ left outer join (select ch1sch, count(*) grp6_cnt from 2011_DETAIL where income = '$3,825 - $4,' group by ch1sch) grp6 on (school_id = grp6.ch1sch)
+ left outer join (select ch1sch, count(*) grp7_cnt from 2011_DETAIL where income = '$4,380 - $4,' group by ch1sch) grp7 on (school_id = grp7.ch1sch)
+ left outer join (select ch1sch, count(*) grp8_cnt from 2011_DETAIL where income = '$4,935 - $5,' group by ch1sch) grp8 on (school_id = grp8.ch1sch)
+ left outer join (select ch1sch, count(*) grp9_cnt from 2011_DETAIL where income = '$5,490 or ab' group by ch1sch) grp9 on (school_id = grp9.ch1sch)
+where school_id <> 0;

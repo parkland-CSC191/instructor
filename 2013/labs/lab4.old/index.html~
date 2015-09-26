@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>CSC191: Lab 4</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Lab 4</h2>
+
+<p>
+<b><font size="+2">Context</font></b><br>
+This lab covers Chapters 9-11
+<p>
+
+<p>
+<b><font size="+2">Objectives</font></b><br>
+<ul>
+	 <li>Add report functionality to JL Bookstore website</li>
+	 <ul> Links:
+	 	<li><a href="http://onyx.csit.parkland.edu/~oracle/csc191/lab4/">Bookstore Web front-end</a></li>
+		<li><a href="https://docs.google.com/document/d/1A4AWRXsVPSjK66dBd9El_fDkmVugORB4FJocNN2jIwA/edit?hl=en_US">Google Doc for collaborative queries</a></li>
+	</ul>
+</ul>
+
+https://docs.google.com/document/d/1A4AWRXsVPSjK66dBd9El_fDkmVugORB4FJocNN2jIwA/edit?hl=en_US
+
+
+<p>
+<b><font size="+2">Requests</font></b><br>
+Your task is to generate queries that produce the desired results. Each query will be saved in a special php script ("special" as in "simple") that is called by bookstore front-end. You will be able to see how your queries interact with a live database connection from a website. You will see how things like column names make a difference, the assumptions of the one requesting the work are not always the assumptions used by the developer (you). <p>
+
+The following work requests have been submitted:
+<table border="1" cellpadding="5" cellspacing="5">
+	<tr><th>Item#</th><th>Description</th></tr>
+	<tr><td><a href="demo1.sql">DEMO1</a></td><td>
+			Create logins for all customers<br>
+			login: first initial + last name<br>
+			password: first three <b><i>letters</i></b> of the address + zip code backwards<br>
+			If they have placed an order, use shipstreet. Otherwise use address. Only one shipstreet per customer</td></tr>
+	<tr><td><a href="demo2.sql">DEMO2</a></td><td>Find the average length of author's first and last names for all books sold per region. Sort by compass value (of region)</td></tr>
+	<tr><td>1</td><td>Which author sells the most books? Display all authors and the number of books they sell.</td></tr>
+	<tr><td>2</td><td>Create a list that shows which books are more profitable than the overall average profit (for the entire bookstore). The output should also display which category the book belonds to, and be sorted from most profitable category to least.</td></tr>
+	<tr><td>3</td><td>Show stats for how many books sold, total profit and number of customers placing orders per day.</td></tr>
+</table>
+
+<p>
+<b><font size="+2">Chap 11 Advanced Challenge</font></b><br>
+JustLee Books has a problem: Book storage space is filling up. As a solution, management is considering limiting the inventory to only those books returning at least a 55% profit. Any book returning less than a 55% profit would be dropped from inventory and not reordered.<p>
+This plan could, however, have a negative impact on overall sales. Management fears that if JustLee stops carrying the less profitable books, the company might lose repeat business from its customers. As part of the management's decision-making process, it wants to know whether current customers purchase less profitable books frequently. Therefore, management wants to know how many times these less profitable books have been purchased. ["recently" removed]<p>
+Determine which books generate less than a 55% profit and how many copies of these books have been sold. Summarize your findings for management, and include a copy of the query used to retrieve data from the database tables.<p>
+
+<p>
+<b><font size="+2">Development</font></b><br>
+Folowing the examle set forth by the "Requests" above, come up with your request. As a class, discuss what might be a Real World example, figure out what we want the data to look like, than do the query.
+
+<p>
+<b><font size="+2">For Fun</font></b><br>
+<a href="complex.sql">complex.sql</a><br>
+If you want to see some semi-complex sql, here is a taste of what I worked on today. I did not write this query - I had to tune it and make it run faster. Fun stuff. :|
+
+<p>
+<b><font size="+2">Homework</font></b><br>
+Read Chapter 12 "Subqueries". If you are really bored, start doing the Hands-On Exercises. :)
+
+
+</body>
+</html>

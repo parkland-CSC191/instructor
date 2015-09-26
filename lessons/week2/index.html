@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>CSC 191</title>
+	<meta name="description" content="CSC 191" />
+	<meta name="keywords" content="sql, class, parkland" />
+	<link href="/~csc191/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="header">
+		<h1><a href="../../">CSC 191</a></h1>
+		<ul id="menu">
+			<li class="active"><a href="../../">home</a></li>
+			<li><a href="../../lessons/">lessons</a></li>
+			<li><a href="../../labs/">labs</a></li>
+		</ul>
+	</div>
+
+	<div id="bar">
+		<div class="wrap">
+			<span class="step">Week 2</span>
+		</div>
+	</div>
+
+	<div class="wrap">
+		<h3>Goal</h3>
+		<p>Explore the class project data, both in its native format and in a database
+		</p>
+
+		<h3>Objectives</h3>
+		<p><table cellpadding="1">
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td>Explore the Kindergarten Lottery data in a spreadsheet
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td>Import the data into a database
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td>Explore the Kindergarten Lottery data in a database
+		  </td>
+		 </tr>
+		 </table>
+		</p>
+
+		<h3>Details</h3>
+		<p><b>1. first download the following:</b><br>
+		<a href="http://onyx.csit.parkland.edu/~csc191/data/u4_lottery_data.xlsx">http://onyx.csit.parkland.edu/~csc191/data/u4_lottery_data.xlsx</a> <br>
+		<a href="http://onyx.csit.parkland.edu/~csc191/sql/create_lottery.sql">http://onyx.csit.parkland.edu/~csc191/sql/create_lottery.sql</a> <br>
+		<a href="http://onyx.csit.parkland.edu/~csc191/data/u4_lottery_data.csv">http://onyx.csit.parkland.edu/~csc191/data/u4_lottery_data.csv</a> <br>
+</p>
+
+<p>
+<b>2. Explore the data (xlsx) visually with Excel (or another spreadsheet program):
+<ul>
+<li>how many total people?</li>
+<li>how many people live in Urbana? Savoy? Champaign? Other cities?</li>
+<li>what does "preasgcd" mean?</li>
+<li>how many different columns are there?</li>
+<li>how many people chose BO as their 3rd choice school (ch3schna)?</li>
+</ul>
+</p>
+
+<p>
+<b>3. Load data (csv) into a table.</b> <br>
+For mysql/phpmyadmin, you will probably want to create a new database (I use u4lottery). I imported the file into the default table ("table 1"), and then renamed the table. For sqlite, you might want to create a new database as well (u4lottery?) and do the same with the table.
+<p>
+<b><u>BETTER INSTRUCTIONS</u></b><br>
+For those struggling to comprehend my totally unclear and cryptic instructions, try this:
+<ol>
+ <li>in phpMyAdmin, select a table on the left-hand side</li>
+ <li>Click the "Import" tab</li>
+ <li>Click the "Browse your computer" radio button, then click "Choose File"</li>
+ <li>Navigate to wherever you downloaded create_lottery.sql, open it</li>
+ <li>Click "Go" (near the bottom)</li>
+ <li>Click on the new "lottery" table on the left-hand side</li>
+ <li>Click the "Browse your computer" radio button, the click "Choose File"</li>
+ <li>Navigate to wherever you downloaded u4_lottery_data.csv, open it</li>
+ <li>Click "Go" (near the bottom)</li>
+ <li>Wait for a minute</li>
+</ol>
+If that doesn't work for you, please let me know.
+</p>
+
+<p>
+<b>4. Explore the data via sql:</b>
+</ul>
+<li>how many total people? </li>
+<li>how many people live in Urbana? Savoy? Champaign? Other cities? </li>
+<li>how many different columns are there? </li>
+<li>how many people chose BO as their 3rd choice school (ch3schna)? </li>
+<li>of the people that chose BO as their 1st choice (ch1schna), how many were not assigned to BO (asgsch)? HINT: BO is number school# 10. </li>
+<li>how many people did not make a 5th choice (ch5schna)? HINT: check for blank values, but not NULL *grin* </li>
+<li>how many people were not assigned to a school?  </li>
+</ul>
+</p>
+
+<p>
+<b>5. Your turn;</b> come up with two of your own questions (doesn't matter how complex). Can you think of queries to answer the questions?
+		</p>
+
+		<h3>END</h3>
+		<p>Consolidate all your work into a single document (word, text doc, email, etc) and email that to me with the subject "CSC 191: Week 2" and your name. For Step 4, I am expecting sql queries plus whatever commentary you wish to include. Due by Sunday at 11:59 pm</p>
+	</div>
+		
+	<div id="footer">
+		<p class="right">Design: Luka Cvrk, <a title="Awsome Web Templates" href="http://www.solucija.com/">Solucija</a></p>
+	</div>
+</body>
+</html>

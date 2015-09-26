@@ -1,0 +1,36 @@
+< ? php
+
+function display_tabled_data($data, $style = "fancy") {
+ if ($style == "fancy") {
+   print ("<table class=\"dynamicTable\" border='1'>\n <tr>\n");
+ } else {
+   print ("<table border='1'>\n <tr>\n");
+ }
+
+ if (count($data)==0) {
+   print("  <th>Query returned 0 rows</th>\n <tr>\n");
+ } else {
+  // All data is returned in nested, associative arrays.
+  // To get the column names, find the keys of the first nested associative array.
+  $column_names = array_keys($data[0]);
+  $column_count = count($column_names);
+  foreach ($column_names as $column_name) {
+   print("  <th>$column_name</th>\n");
+  }
+  print(" </tr>\n");
+
+  // For each row, spit out each sub-array value (as opposed to key)
+  foreach ($data as $row) {
+   print(" <tr>\n");
+   if ($style == "fancy") {
+     foreach ($row as $element) { print("  <td><pre>$element</pre></td>\n"); }
+   } else {
+     foreach ($row as $element) { print("  <td>$element</td>\n"); }
+   }
+   print(" </tr>");
+  }
+ }
+ print("\n</table>\n");
+}
+
+?>

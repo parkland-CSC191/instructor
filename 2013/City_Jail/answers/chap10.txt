@@ -1,0 +1,25 @@
+-- chapter 10
+-- Case Study "City Jail"
+
+-- query 1
+select crime_id, classification, date_charged, hearing_date, trunc(hearing_date-date_charged) elapsed 
+from crimes 
+where hearing_date-date_charged > 14;
+
+-- query 2
+select last, first, precinct, decode(substr(precinct, 2, 1), 'A', 'Shady Grove', 'B', 'Center City', 'C', 'Bay Landing', 'Nowhere') assignment 
+from officers;
+
+-- query 3
+select criminal_id, upper(last) last, upper(first) first, sentence_id, to_char(start_date, 'Month DD, YYYY') start_date, trunc(months_between(end_date, start_date)) duration 
+from criminals natural join sentences;
+
+-- query 4
+select last, first, charge_id, to_char(nvl(fine_amount,0) + nvl(court_fee,0),'$9999.99') amount_owed, to_char(nvl(amount_paid,0),'$9999.99') amount_paid, to_char(nvl(fine_amount,0) + nvl(court_fee,0) - nvl(amount_paid,0),'$9999.99') balance, pay_due_date 
+from criminals natural join crimes natural join crime_charges 
+where (nvl(fine_amount,0) + nvl(court_fee,0)) > nvl(amount_paid,0);
+
+-- query 5
+select last, first, start_date probation_start, months_between(end_date,start_date) duration, add_months(start_date, 2) review_date 
+from criminals natural join sentences 
+where months_between(end_date,start_date) > 2;

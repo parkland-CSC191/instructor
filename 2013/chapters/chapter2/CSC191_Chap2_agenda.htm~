@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>CSC 191: Chapter 2 - Basic SELECT</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+	background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 2 - Basic SELECT</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+	<li>Collect any outstanding homework. Each student should have a question from Chapter 1 or Chapter 2. Go over them.
+	<li>Students will install SQLDeveloper at home as part of the HOWTO lab 
+	<li>Students can login to a shared database with personal accounts (using SQLDeveloper from classroom):
+	<ul>
+	<li>Login id is the same as your parkland email alias (before the @stu.parkland.edu)
+	<li>Password is your login id + #3; might want to change your password. =)
+	<li>Database name (SID) is CSC191
+	<li>Port = 35099
+	<li>hostname = onyx.csit.parkland.edu
+</ul>
+	<li>All class files will be posted on the CSIT website. Angel is a mess.
+	<li>Today we will be covering Chapter 2
+</ul>
+
+<p>
+
+[5 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 2</b>
+<ul>
+	<li>Pop Quiz
+	<li>Structure of a SELECT query (online documentation)
+	<li>Walk through chapter exercises (chap2.sql)
+<ol>
+	<li>@JLDB_Build.sql						(p 28)
+	<li>select table_name from user_tables;				(p 29)
+	<li>desc books						(p 30)
+	<li>select * from customers;					(p 32)
+	<li>select title, pubdate from books;				(p 35)
+	<li>select title "Title of book", category from books;		(p 37)
+	<li>select title, retail-cost profit from books;			(p 40)
+	<li>select title, retail, discount, retail-discount from books;		(p 42)
+	<li>select distinct state from customers;				(p 43)
+	<li>	select firstname||lastname from customers;			(p 45)
+	<li>	select firstname||' '||lastname "Customer name" from customers;	(p 47)
+</ol>
+<li>Advanced Challenge (p 55)
+<ol>
+	<li>Have students provide suggestions for how to build this query
+	<li>Use Customers table from page 11 as a guide
+</ol>
+</ul>
+
+
+
+<b>Talk about Advanced Challenge (as time permits) (p 55)</b>
+<p>
+
+<b>Assignments</b>
+<ul>
+	<li>HOWTO Lab
+	<li>Chapter 2 Hands-on (p 54-55) due by 4:pm Sunday, September 11 (submitted electronically)
+	<li>Chapter 2 Advanced Challenge (p 55) due by 4:pm Sunday, September 11 (submitted electronically)
+	<li>NO CLASS NEXT MONDAY (September 5th)
+</ul>
+
+
+
+</body>
+<html>

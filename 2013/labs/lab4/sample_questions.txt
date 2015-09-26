@@ -1,0 +1,9 @@
+which school (by name) was chosen the most times in 2012?
+which school (by name) was chosen first the most times in 2012?
+which school still had empty seats in 2012?
+which school has had the most increase in the number of choices between 2010 and 2012?
+Challenge: same as #4, but back to 2009?
+how much has the number of unassigned students changed  since 2010 (positive or negative)?
+what is the average number of choices each person made in 2012? 2010?
+what is your chance of getting into Barkstall in 2011 (expressed as a percentage)
+if you wanted the ESL program, which school offers the best chance of getting in (2012)?

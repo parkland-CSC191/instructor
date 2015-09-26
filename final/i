@@ -1,0 +1,5 @@
+SELECT a.applicant_id, c.selection_number, n.school_name, a.program 
+from 2015_applicant a
+inner join 2015_choice c on a.applicant_id = c.applicant_id and a.assigned_school = c.school_id
+inner join `2015_Sch_names` n on a.assigned_school = n.school_id
+order by a.applicant_id

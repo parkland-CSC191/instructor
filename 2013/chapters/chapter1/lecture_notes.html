@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>CSC 191: Chapter 1 - Lecture notes</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+	background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 1 - Lecture notes</h1>
+
+
+<b>Chapter Topics</b><br/>
+<ul>
+	<li>	define database terms
+	<li>	identify purpose of a database management system (DBMS)
+	<li>	explain database design by using entity-relationship models and normalization
+	<li>	explain the purpose of the structured query language
+</ul>
+<p>
+
+1st two (2) paragraphs are essential (Chap 1, page 2). We are going to spend a lot of time pretending in this class, or role-playing. Everybody has just become a DBA (congrats!).
+<p>
+
+page 3 (and page 11): Excise "field", "record" and "file". I like to make the analogy that a simple database table is very much like an Excel spreadsheet; columns and rows. Or like a HTML table.
+<p>
+	
+So let's design our very first database. Class members throw out ideas for what our online bookstore database needs. Maybe BOOKS, CUSTOMERS, etc. Then we need to further devlop thse broad categories and put some flesh on them with details. Book TITLE, AUTHOR, ISBN, PUBLISHER, etc. And then we can put these as headers to one big monstrous table.
+<p>
+
+If we start ordering books, you can see how multiple "orders" can repeat data. Takes a long time to write it on the board, right? This is called "input". Worse, the repeated data is hard to change (ie, CUSTOMER gets a new phone number). So how can we change this table to make ti have less redundant data and easier to update? Yes, we can split it into two entities. (what is an "entity"?).
+<p>
+
+How are these entities related? One customer can buy many books, and a single book can be purchased by many customers (especially those really popular "Best Sellers"). We call this a "many to many relationship". As we draw this on the board, we have just created our first "Entity Relationship Diagram" (aka, ERD), or in other words, a entity relationship model; a way of viewing different structures and how they are tied together.
+<p>
+
+And this is where it gets tricky, so put on your thinking caps. Most databases do not support "many to many relationships". The technical reason is that relational databases enforce a hierarchy via constraints. We will talk about "constraints" Chapter 4. However, just for the record, it is entirely possible to create entities that have no formal relationships. Maybe they are related in your head, but nothing defined in the database. A lot of application developers in the real world do this, but they unleash hell when they try to use their application for large numbers of customers.
+<p>
+
+
+</body>
+<html>

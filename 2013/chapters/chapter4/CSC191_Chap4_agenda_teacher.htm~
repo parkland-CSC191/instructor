@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>CSC 191: Chapter 4 - Constraints</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 4 - Constraints</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+<li>Collect any outstanding homework. Each student should have a question from Chapter 2 or Chapter 3. Go over them.
+<li>Today we will be covering Chapter 4
+
+
+<ul>
+<li>Purpose of constraints
+<li>Types of constraints: PK, FK, unique, check, not null
+<li>Creating constraints (table vs column)
+<li>Disable/enable constraints
+<li>Drop constraints
+</ul>
+</ul>
+
+<p>
+
+[5 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 4</b>
+<br>
+
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Pop Quiz: What do constraints constrain? Why?<p>
+
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Task for students: think of one real-world reason why this is important.<br>
+Teacher notes:
+<ul>
+ <li>Gender fields
+ <li>y/n questions
+ <li>library card catalog
+ <li>social security
+</ul>
+
+<p>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Have each student create a table specific to their example.
+
+<p>
+PK and Unique constraints are very similar to each other; the both make sure that each constrained column is distinct. As you can tell from the many fine examples you as a class listed, having a guaranteed distinct value is incredibly important.
+
+<p>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Let's start with Unique constratints. Everyone create a unique key on your table (syntax on pp. 111 and 127). If you do not yet have a field that makes sense to be unique, create a new ID field (ie, your_table_name_ID). Teacher will monitor progress on the main screen so we can see new tables/constraints as they pop up. Teacher will then attempt to insert duplicate data.
+
+<p><img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">So tell me, what do <b>Unique</b> constraints do?
+<p>
+So this unique key is preventing "bad" data, or redundant rows.
+<p>
+
+<b>NOT NULL</b><br>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">What do <b>NOT NULL</b> constraints do?
+<p>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Same thing here, students create a NOT NULL constraint for their table (syntax: pp 115, 128). Teacher will then attempt to insert NULL data into constrained rows.
+<p> 
+NOTE: NULL data can be inserted into columns with UNIQUE Constraints.
+<p> 
+
+<b>CHECK</b></br>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">What do <b>CHECK</b> constraints do?
+<p>
+This one might be a tad trickier. Here we create a "user-defined" constraint. If you have to create a new column for this exercise, please do so. For example, Gender, citizen y/n, active, in class, awake, 18 years or older..
+<p> 
+
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Next, create the constraint (pp 113, 127-128). Teacher will attempt to violate the constraint with "bad" data.
+<p> 
+
+So far, each constraint type has only affected a single column in one table. We now move on to a special class of constraints that are truly relational.
+<p> 
+
+<b>PRIMARY KEY</b><br>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">What does a Primary Key actually do? What is it used for? Please do not repeat what the book says on page 103.
+<p> 
+ 
+We need something that can isolate one row from all the others, or uniquely identifies it.
+<p> 
+
+And we have to account for NULL values. The Primary Key is like a Unique Constraint and  NOT NULL Constraint all wrapped up in one. We will start with a simple primary key. But first let us drop whatever Unique Constraints we have.
+<p> 
+
+How to find the names of constraints? Those who read the book will know that information is on pages 120-122. We can find the constraints we created earlier with something like this:<br>
+<pre>select constraint_name, constraint_type from user_constraints where table_name = '&my_table';</pre>
+
+<p> 
+As you probably know, if you did not name the constraint when you created it, it was given a name by the rdbms, something like 'SYS_%'. Let us drop the constraint of type 'U' for our table (pp 124):
+
+<p> 
+PS - here is a tricky way to generate the code:<br>
+<pre>select 'alter table &my_table drop constraint '|| constraint_name ||';' from user_constraints where constraint_type = 'U';</pre>
+
+
+<p> 
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">And now we can add a primary key constraint on this sucker (pp 103, 126-127). Go fo it.
+
+<p>
+So what's the big difference between Unique Keys and Primary keys? They both seem to do the same thing, right?<p>
+
+There are two big differences:
+<ul>
+	<li>Tables can have multiple unique keys, but only one Primary key (hence, PRIMARY - hmmm, no SECONDARY keys)</li>
+	<li>Only Primary keys can be used to enforce table relationships, as we will see in moment</li>
+</ul>
+<p>
+<b>FOREIGN KEY</b><br>
+Foreign keys require a Primary key. It is entirely possible to put a Foreign key on the same table as the Primary key (and I have seen this done), but that doesn't make any sense. The book does have an example of this on pp 109. Usually, a Foreign key points to the primary key of a <b><i>different</i></b> table.
+<p>
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg"><pre>create table foreign_table (local_key varchar2(2), remote_key varchar2(2));</pre>
+
+So we have this new table. Right now it does not have any constraints on it. yet. We could put a primary key on the local_key column. But this exercise is about Foreign keys. We want to put a limitation on this column that depends on a column in a completely different table.<p>
+
+<img src="http://www.csit.parkland.edu/~cschultz/csc191/images/gold_star.jpg">Go ahead and create a foreign key on this new table to your sample table.<p>
+
+
+<b>Assignments</b>
+<ul>
+<li>Chapter 4 Hands-on due by 4:pm Sunday, September 18 (submitted electronically)
+<li>Chapter 4 Advanced Challenge due by 4:pm Sunday, September 18 (submitted electronically)
+</ul>
+
+
+
+</body>
+<html>

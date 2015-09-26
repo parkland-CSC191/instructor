@@ -1,0 +1,46 @@
+spool answer_[first initial][last name].log
+
+connect sso/sso
+
+PROMPT query 1
+create 
+
+PROMPT query 2
+connect
+
+PROMPT query 3
+connect
+
+grant 
+grant
+grant
+
+PROMPT query 4
+create 
+grant 
+grant 
+
+PROMPT query 5
+grant
+
+PROMPT query 6
+connect
+select
+select
+select
+
+PROMPT query 7
+connect
+revoke
+revoke
+
+PROMPT query 8
+revoke
+
+PROMPT query 9
+drop
+
+PROMPT query 10
+drop
+
+exit

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>CSC 191</title>
+	<meta name="description" content="CSC 191" />
+	<meta name="keywords" content="sql, class, parkland" />
+	<link href="/~csc191/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="header">
+		<h1><a href="../../">CSC 191</a></h1>
+		<ul id="menu">
+			<li class="active"><a href="../../">home</a></li>
+			<li><a href="../../lessons/">lessons</a></li>
+			<li><a href="../../labs/">labs</a></li>
+		</ul>
+	</div>
+
+	<div id="bar">
+		<div class="wrap">
+			<span class="step">Week 7</span>
+		</div>
+	</div>
+
+	<div class="wrap">
+		<h3>Goal</h3>
+		<p>As an introduction to what you will be doing for the Midterm next week, you will tackle tackle one question; your task is to answer this question with a single query, outputing the answer in JSON format including the full name of each school. The question is: </p><br>
+		<h4><b>What are my chances of getting into any given school (based on first choices only)? Sort the output from highest chance to lowest chance.</b></h4>
+                <p> Here is an example one your fellow students suggested: <br>
+                So 85 people were assigned BO out of 89 who had them as a first choice. So is the probability for BO is 85/89? <br>
+		Answer: Yes
+		</p>
+		<p>
+
+
+		<h3>Objectives</h3>
+		<p><table cellpadding="1">
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td>Use the "think a query problem" method from Chapter 6; document each step.
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px" style="margin:0 3px 0 0;"></td>
+		  <td><b>Step 1: The Data You Are Working With</b><br>
+		  Identify all the data we need to address this question
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td><b>Step 2: Consider Aggregates as Separate Queries</b><br>
+		  Will you need an aggregate function (ie, sum)? If so, what data needs to be grouped? What keywords from the question give you a hint?
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td><b>Step 3: The Main Filter</b><br>
+		  How can we reduce the number of rows?
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td><b>Step 4: Core Joins</b><br>
+		  What columns will join you join multiple tables on? Consider also subqueries.
+		  </td>
+		 </tr>
+		 <tr>
+		  <td><img src="/~csc191/images/checkbox.png" width="15px" height="15px"></td>
+		  <td><b>Step 5: Apply Polish</b><br>
+		  This is where you format the JSON, just like in #6 of Chapter 5. For example: <br>
+                  ['School 1', 23.7], <br>
+                  ['School 2', 16.1], <br>
+                  ['School 3', 14.2], <br>
+                  ['School 4', 14.0], <br>
+                  ['School 5', 12.5], <br>
+                  ['School 6', 12.1], <br>
+                  ['School 7', 11.8], <br>
+                  ['School 8', 11.7], <br>
+                  ['School 9', 11.1], <br>
+                  ['School 10', 8.9], <br>
+                  ['School 11', 8.9], <br>
+                  ['School 12', 8.9] <br>
+                  <br>
+                  <br>
+                  You can see the example in context in the Playground below (scroll down in the imbedded frame).
+		  </td>
+		 </tr>
+		 </table>
+		</p>
+
+                <h3>MIDTERM HOMEWORK</h3>
+                <p><b>By December 9th, what will you have wanted to accomplish? (For instance, pretend you were in a time machine and traveled 2.5 months into the future - what do you want to see?) Are you willing to do the work necessary to achieve that goal?</b> <br>
+                Either bring your response to class on October 7th, or email it to me before class.</p>
+
+
+		<h3>Playground</h3>
+		<p>JSFiddle: <a href="http://jsfiddle.net/sacrophyte/veqfatc8/1/">http://jsfiddle.net/sacrophyte/veqfatc8/1/</a></p>
+
+	<iframe width="100%" height="300" src="http://jsfiddle.net/sacrophyte/veqfatc8/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+	</div>
+	<div id="footer">
+		<p class="right">Design: Luka Cvrk, <a title="Awsome Web Templates" href="http://www.solucija.com/">Solucija</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>CSC191: Lab 5: Final</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Lab 5: Final</h2>
+
+<h3>Context</h3>
+You have been hired at a large company that has been producing an application for over 30 years. Unfortunately, the application was not designed to work in todays databases and thus is not very robust and actually quite confusing. Even worse, the two guys who developed the application and database design no longer work at the company and nobody knows anything about it except how to login.
+<p>
+
+<h3>Objectives</h3>
+At the end of this lab, you should have sql statements that enhance a new application and provide a simple ERD for the new relationships.
+
+<h3>Hints</h3>
+<ul>
+	<li>Put all your SQL in one document and provide comments that explain what the query is doing
+	<li>Since all tables have multiple columns, divide the work of analyzing specific columns to group members
+	<li>The techniques that you use for Task #2 can be used for other Tasks as well. In fact, it is not a bad idea for the group to come up with a common way to look for candidate primary keys and analyze data so everyone in the group is doing the same thing in different columns.
+	<li>As you "analyze" the data, it is important to see if the data makes any kind of sense or if there are patterns. Remember that Personally Identifiable Information like names and numbers have been scrambled.
+	<li>I doubt you can do <b><i>all</i></b> the Tasks below - I am waiting to be surprised, however :)
+</ul>
+
+
+<h3>Tasks</h3>
+<b>1. Exploration - 5 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Look at the tables in your assigned SCOTT schema. Blue Team will get one schema, Red Team will get another schema.
+	<li>Look at the columns.
+	<li>Look at the indexes.
+	<li>Report back to the teacher on what you have found. Any suggestions so far?
+</ol>
+
+<b>2. Analyze and enhance AE_RFSCT - 35 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Use queries to see if any columns make a good candidate for a Primary Key
+	<li>use queries to determine outlier values for your candidate column
+	<li>fix outliers so a primary key can be created
+	<li>Create a Primary Key
+	<li>look at the data for other columns (top-N analysis, select ..., count(*) group by ...); provide your thoughts on what the columns are used for
+	<li>Report your findings and your work
+</ol>
+
+<b>3. Analyze and enhance AE_DT509 - 20 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Use queries to see if any columns make a good candidate for a Primary Key
+	<li>use queries to determine outlier values for your candidate column
+	<li>fix outliers so a primary key can be created
+	<li>Create a Primary Key
+	<li>Create a relationship between AE_DT509 and AE_RFSCT
+	<li>Report your findings and your work
+</ol>
+
+<b>4. Analyze and enhance AE_AUDIT - 20 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Use queries to see if any columns make a good candidate for a Primary Key
+	<li>Create a Primary Key if appropriate
+	<li>Create a relationship between AE_AUDIT and AE_DT509
+	<li>Report your findings and your work
+</ol>
+
+<b>5. Create an ERD - 5 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Suggest new column names and document your recommendations
+	<li>User PowerPoint or a Google Presentation to draw a simple ERD based on the tables
+	<li>Report your findings and your work
+</ol>
+
+<b>6 - OPTION 1 - Clean up data in AE_RFSCT - 20 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Analyze AE_RFSCT.field2 (find values that have the highest counts)
+	<li>Determine what needs to be done to "fix" the top 2. Keep in mind the work you did in Task #3 (creating a foreign key)
+	<li>Report your findings and your work
+</ol>
+
+<b>6 - OPTION 2 - Queries - 20 minutes</b><br>
+<ol type = "a">
+	<li>Pick a spokesperson for your group (switches for each Task)
+	<li>Pick a recorder for your group (switches for each Task)
+	<li>Report the top 10 names (from AE_RFSCT) who had documents audited in the month with the most audited documents
+	<li>Identify all parent keys in AE_RFSCT that do not have any children
+	<li>Report your findings and your work
+</ol>
+
+<h3>Hints</h3>
+<ul>
+	<li>Put all your SQL in one document and provide comments that explain what the query is doing
+	<li>Since all tables have multiple columns, divide the work of analyzing specific columns to group members
+	<li>The techniques that you use for Task #2 can be used for other Tasks as well. In fact, it is not a bad idea for the group to come up with a common way to look for candidate primary keys and analyze data so everyone in the group is doing the same thing in different columns.
+	<li>As you "analyze" the data, it is important to see if the data makes any kind of sense or if there are patterns. Remember that Personally Identifiable Information like names and numbers have been scrambled.
+	<li>I doubt you can do <b><i>all</i></b> the Tasks above - I am waiting to be surprised, however :)
+</ul>
+
+
+</body>
+</html>

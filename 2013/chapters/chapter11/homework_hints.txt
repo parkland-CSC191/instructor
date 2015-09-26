@@ -1,0 +1,38 @@
+-- chapter 11
+-- All Price columns are unformatted;
+--   ie, no $ in front of the output, no to_char function wrapped around it
+-- Hands-On
+
+-- query 1
+select book_count
+
+-- query 2
+select expensive_books
+
+-- query 3
+select Most_recent_publication (DATE!!)
+
+-- query 4
+select total_profit
+
+-- query 5
+select least_expensive
+
+-- query 6
+select average_profit
+
+-- query 7
+select customer#, order_count
+
+-- query 8
+select publisher.name, books.category, average_retail_price
+
+-- query 9
+select customers.firstname, customers.lastname, customers.state, total_order
+
+-- query 10
+select most_expensive
+
+-- Advanced Challenge
+-- query 1
+select books.title, "% PROFIT", not_profitable_book_count

@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>HOWTO: Installing SQLDeveloper</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+	background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>HOWTO: Installing SQLDeveloper</h1>
+
+
+<table border="1" cellpadding="20">
+	 <tr>
+		 <th> Platform </th> <th> name of package </th> <th> Notes </th>
+	 </tr>
+	 <tr>
+		 <td> Windows 32-bit (no JRE) </td>
+		 <td> <a href="http://www.csit.parkland.edu/~cschultz/csc191/resources/sqldeveloper-2.1.1.64.45-no-jre.zip"> sqldeveloper-2.1.1.64.45-no-jre.zip</a> </td>
+		  <td> To install and run:
+			  <ul>
+				  <li>Ensure you have a JDK installed, if not, download <a href="http://java.sun.com/j2se/1.5.0/download.jsp">here</a> <br>
+				  (click the Download for JDK 6 Update <b><i>xx</i></b>, where <b><i>xx</i></b> is the latest update)
+				   <li> Extract sqldeveloper.zip into any folder, using folder names
+				   <li> Within that folder, open the sqldeveloper folder
+				   <li> Double-click sqldeveloper.exe
+			   </ul>
+		   </td>
+	   </tr>
+	   <tr>
+		 <td> Windows 32-bit </td>
+		   <td> <a href="http://www.csit.parkland.edu/~cschultz/csc191/resources/sqldeveloper-2.1.1.64.45.zip"> sqldeveloper-2.1.1.64.45.zip</a> </td>
+		    <td>  To install and run:
+                              <ul>
+                   <li> Extract sqldeveloper.zip into any folder, using folder names
+                   <li> Within that folder, open the sqldeveloper folder
+                   <li> Double-click sqldeveloper.exe
+                 </ul>
+               </td>
+  </tr>
+  <tr>
+	  <td> Windows 64-bit (no JRE) </td>
+	  <td> <a href="http://www.csit.parkland.edu/~cschultz/csc191/resources/sqldeveloper64-2.1.1.64.45-no-jre.zip">sqldeveloper64-2.1.1.64.45-no-jre.zip</a> </td>
+		  <td> To install and run:
+			  <ul>
+				  <li>Ensure you have a JDK installed, if not, download <a href="http://java.sun.com/j2se/1.5.0/download.jsp">here</a> <br>
+				  (click the Download for JDK 6 Update <b><i>xx</i></b>, where <b><i>xx</i></b> is the latest update)
+				   <li> Extract sqldeveloper.zip into any folder, using folder names
+				   <li> Within that folder, open the sqldeveloper folder
+				   <li> Double-click sqldeveloper.exe
+			   </ul>
+		   </td>
+	   </tr>
+  <tr>
+	  <td> Mac OS X </td>
+	  <td> <a href="http://www.csit.parkland.edu/~cschultz/csc191/resources/sqldeveloper-3.0.04.34-macosx.tar.gz">sqldeveloper-3.0.04.34-macosx.tar.gz</a> </td>
+		  <td> To install and run:
+			  <ul>
+				  <li>Ensure you have a JDK installed, if not, download <a href="http://developer.apple.com/java/download/">here</a> <br>
+				  (click the Download for JDK 6 Update <b><i>xx</i></b>, where <b><i>xx</i></b> is the latest update)
+				   <li> Double-click the sqldeveloper icon
+			   </ul>
+		   </td>
+	   </tr>
+
+  <tr>
+	  <td> Linux </td>
+	  <td> <a href="http://www.csit.parkland.edu/~cschultz/csc191/resources/sqldeveloper-3.0.04.34-1.noarch.rpm">sqldeveloper-3.0.04.34-1.noarch.rpm</a> </td>
+		  <td> To install and run:
+			  <ul>
+				  <li>Ensure you have a JDK installed, if not, download <a href="http://java.sun.com/j2se/1.5.0/download.jsp">here</a> <br>
+				  (click the Download for JDK 6 Update <b><i>xx</i></b>, where <b><i>xx</i></b> is the latest update)
+				  <li>rpm -Uhv sqldeveloper-3.0.04.34-1.noarch.rpm 
+				  <li>cd sqldeveloper - sqldeveloper
+			   </ul>
+		   </td>
+	   </tr>
+
+</table>
+
+
+
+
+
+</body>
+<html>

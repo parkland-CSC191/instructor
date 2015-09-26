@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>CSC191: Final: Lab 5</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+ table, th, td { text-align:center; }
+ ol.la { list-style-type:lower-alpha; }
+ ol.lr { list-style-type:lower-roman; }
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Final: Lab 5: Create a homework database</h2>
+
+<p>
+<b><font size="+2">Objectives</font></b><br>
+Students must come up with an ERD, make users and assign roles/privs, create all necessary tables, populate those tables and generate all sql queries that allow student homework to be submitted, graded and viewed.
+
+<p>
+<b><font size="+2">Context</font></b><br>
+You have been working with "Homework Checker"; this is essentially a php/javascript front-end for a homework database. Your job is to start from scratch and design something similar, using all the knowledge you have learned from this class. You will not be implementing the front-end stuff (php/javascript), but by the end of the class today, you will have a working database that is capable of being used as a backend.
+<p>
+Unlike Homework Checker, this one will be significantly less complex. Student homework will be submitted in the form of simple answers; for example, multiple choice (a,b,c,d), True/False or "Fill in the blank". As you go through this exercise, it will be up to you to decide many things. For instance, do you want the homework questions to be stored in the database?
+
+<p>
+<b><font size="+2">Grading</font></b><br>
+Students will be graded on the following criteria, ranked in order of weight:
+<ul>
+	<li>participation (50%): talking, volunteering to do work, assembling, managing tasks</li>
+	<li>problem solving (20%): Some tasks may seem really difficult. What would you do in real life if faced with this kind of a situation?</li>
+	<li>syntax (20%): If you are responsible for a query, make sure it does exactly what it is supposed to do</li>
+	<li>progress (10%): Tackle tasks one at a time. It is more important to do a good job on half the lab than a bad job on all of it</li>
+</ul>
+
+<p>
+<b><font size="+2">Tasks</font></b><br>
+You will be working in teams to complete most of these tasks. The first task will be done as one large group. After that, you will break off and work on different areas. At times, you may have to coordinate and/or work with another group. When each team is ready, a new task will be assigned. For example, after Task 1 is complete, Team 1 may get task 2.a, Team 2 may get task 2.b and Team 3 may get task 2.c. The first one to finish will get task 2.d.
+<ol>
+	<li>Create ERD</li>
+	<li>Implement design</li>
+	<ol class="la">
+		<li>create user accounts with necessary privs, roles</li>
+		<ol class="lr">
+			<li>Teacher</li>
+			<li>TA</li>
+			<li>Student</li>
+		</ol>
+		<li>create table(s)</li>
+		<li>grant privs to roles</li>
+		<li>populate table(s)</li>
+	</ol>
+	<li>Generate queries for the front-end</li>
+	<ol class="la">
+		<li>create RI, indexes, constraints</li>
+		<li>create queries to submit homework</li>
+		<li>create queries to view grade(s)</li>
+		<li>create queries to grade homework</li>
+		<li>create report(s) for class grades by groups</li>
+		<li>auxiliary task</li>
+</ol>
+	<li>test performance of queries</li>
+</ol>
+
+<p>
+
+<p>
+<b><font size="+2">To have at the end</font></b><br>
+Here is what I expect you to have after two hours of work.
+<ul>
+	<li>Teacher login/password and role. Able to add/change grades and answer key. Access to a view (report) that summarizes grades.</li>
+	<li>TA login/password and role. Able to add/change grades. Can view answer key.</li>
+	<li>Student login/password and role(s). Able to submit homework and see submissions via a view</li>
+	<li>For the above, sample queries are to be provided that demonstrate what the login can do. Add queries to the <a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdGFaQlRpX3dITHJreW9CV0tsSWdQaVE">collaborative spreadsheet</a></li>
+	<li>All queries must return data in under 2 seconds</li>
+	<li>ADVANCED: Report that generates a bell curve</li>
+</ul>
+
+<p>
+<br>
+<b><font size="+2">Don't PANIC!</font></b><br>
+<div style="float: left">
+	<img src="/~cschultz/csc191/images/dontpanic.jpg" height="101" width="120" \>
+</div>
+<div style="float: left;">
+<ul>
+	<li>This lab is nearly impossible to complete in 2 hours</li>
+	<li>Working in groups, you will go even slower</li>
+	<li>If you are getting bogged down and spending more than 15 minutes on a task, you probably need to stop and ask for help.</li>
+	<li>Don't be afraid to ask questions. But also don't be afraid to look it up and ask peers. :)</li>
+</ul>
+</div>
+
+</body>
+</html>

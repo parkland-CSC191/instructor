@@ -1,0 +1,32 @@
+-- query 1
+select firstname, lastname
+
+-- query 2
+select customer#, reffed
+
+-- query 3
+select books.title, profit
+
+-- query 4
+select title, markup
+
+-- query 5
+select something
+
+-- query 6
+select title, cost
+
+-- query 7
+select length
+
+-- query 8
+select title, pubdate, this_date, age
+
+-- query 9
+select next_wed
+
+-- query 10
+select customer#, regional_zip, three_in_cust_num
+
+-- Advanced Challenge
+select title, category, "Current Price", "Revised Price" 

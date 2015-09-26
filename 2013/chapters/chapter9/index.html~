@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>CSC 191: Chapter 9 - JOINS</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 9 - JOINS</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+<li>Today we will be covering Chapter 9
+<ul>
+	<li>Cover the major and minor types of JOINS</li>
+	<li>Discuss and use SET operators</li>
+</ul>
+</ul>
+
+<p>
+
+[10 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 9</b><br>
+<ul>
+	<li>Split class into three groups; one as the "Advanced" group, two others as competing "gameshow" teams</li>
+	<li>Mission for the Advanced group: Come up with at most <b>three</b> super hard queries you want me to write (based on our class database). The group should work on one query at a time, letting me know when you have the following three things ready (either email them to me, or post in a google doc - I will not look at them until I have completed the task):
+	<ol>
+		<li>The question to be solved, writting in English as a word problem</li>
+		<li>A query that answers the question posed in #1</li>
+		<li>The results of running the query against the SCOTT schema</li>
+	</ol>
+</ul>
+<p>
+<br>
+
+<b>Intro to JOINS</b><br>
+<ul>
+	<li>Why do we need JOINS in the first place?</li>
+	<li><b>NOTE:</b> A nuance about JOINS to keep in mind - you only <b><i><u>ever</u></i></b> join <b>TWO</b> rowsources (ie, tables) at any given time. No more, no less. More to follow.</li>
+	<li>For our little game, we have three major categories of JOINS to choose from:
+	<table border="1" cellpadding="4" >
+		<tr>
+			<th>Category</th><th>Major</th><th>Minor</th>
+		</tr>
+		<tr>
+			<td align="center"><b>1</b></td><td align="center">Cartesian</td><td></td>
+		</tr>
+		<tr>
+			<td align="center"><b>2</b></td><td align="center">Inner</td><td><table cellspacing="0" cellpadding="0"><tr><td>Equijoin<td></tr><tr><td>Non-Equijoin<td></tr><tr><td>Natural<td></tr></table></td>
+		</tr>
+		<tr>
+			<td align="center"><b>3</b></td><td align="center">Outer</td><td><table cellspacing="0" cellpadding="0"><tr><td>Left<td></tr><tr><td>Right<td></tr><tr><td>Full<td></tr></table></td>
+		</tr>
+	</table></li>
+	<li>Self Joins are special - they can be any Category, but they only involve one table (joined to itself)</li>
+	<li>Cartesian Joins are very very similar to FULL OUTER Joins. Anyone know the difference?</li>
+	<li>Rules of the game:</li>
+	<ol>
+		<li>Tell me which <i>MAJOR</i> class of JOIN the query needs (1,2 or 3)</li>
+		<li>Each team member has to take a turn answering</li>
+		<li>One point for getting the answer right</li>
+		<li>Half a point off for an incorrect answer, and other team gets a chance to respond</li>
+	</ol>
+	<li>Play ball!</li>
+</ul>
+<p>
+<br>
+
+<b>What is a Cartesian Join?</b><br>
+<ul>
+	<li>Basically, you take all the rows from one table and you multiply them with another.</li>
+	<li>Hence, the fastest way to denormalize a couple tables is use a Cartesian Join.</li>
+	<li>So let us work on an example of a Cartesian join.</li>
+	<ul><li><b>Generate a list of all possible customer and publisher combinations. The output should list customer lastname, firstname and Publisher name.</b></li></ul>
+	<li>Start with a basic query and refine it</li>
+</ul>
+<p>
+<br>
+
+<b>Challenge for the Advanced Group</b><br>
+<ul>
+	<i>Provide a sorted list of all book titles. If the book was ordered by the customer who ordered the most books, also provide the promotion (per book) and the publisher name.</i>
+</ul>
+<p>
+<br>
+
+<b>Everyone else</b><br>
+<ul>
+	Figure out all the tables that we need to touch, and what kind of join operations needed
+</ul>
+<p>
+<br>
+
+<b>Fun with SET operators</b><br>
+<ul>
+	<li>Why use SET operators? What's the point?</li>
+	<li><a href="http://en.wikipedia.org/wiki/File:Venn0001.svg#shared-image-desc">Wiki</a> entry for basic Venn Diagrams</li>
+	<li>Three MAJOR types of SET operations that are relevant to us:
+	<ol>
+		<li>UNION (aka OR, <a href="http://en.wikipedia.org/wiki/Logical_disjunction"><i>Logical Disjunction</i></a>) <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Venn0111.svg/220px-Venn0111.svg.png" height="20"></li>
+		1.b UNION ALL : does not deduplicate results; if there are duplicate entries, UNION ALL will not sort nor eliminate them<br>
+		<li>MINUS (aka <a href="http://en.wikipedia.org/wiki/Material_nonimplication"><i>Non Implication</i></a>) <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Venn0100.svg/240px-Venn0100.svg.png" height="20" />  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Venn0010.svg/150px-Venn0010.svg.png" height="20" /></li>
+		<li>INTERSECT (aka AND, <a href="http://en.wikipedia.org/wiki/Logical_conjunction"><i>Logical Conjuction</i></a>) <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Venn0001.svg/220px-Venn0001.svg.png" height="20" /></li>
+	</ol>
+</ul>
+<p>
+<br>
+<b>Assignments</b>
+<ul>
+	<li>Chapter 9 Hands-on due by 5:pm Sunday, October 30 (<a href="homework_hints.txt">hints</a>)</li>
+	<li>Chapter 9 Advanced Challenge due by 5:pm Sunday, October 30 (<a href="homework_hints.txt">hints</a>)</li>
+	<li>Read Chapter 10</li>
+</ul>
+
+
+</body>
+<html>

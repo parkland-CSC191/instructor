@@ -1,0 +1,238 @@
+styles
+styles/default.css
+styles/print.css
+labs
+labs/lab5.old
+labs/lab5.old/lab5.html
+labs/lab5.old/lab5.html~
+labs/lab2
+labs/lab2/index.html~
+labs/lab2/index.html
+labs/lab4
+labs/lab4/complex_question_query.txt
+labs/lab4/index.html~
+labs/lab4/index.html
+labs/lab4/complex_question_query.html
+labs/lab4/sample_questions.html
+labs/lab4/sample_questions.txt
+labs/howto
+labs/lab1.html~
+labs/lab3.old
+labs/lab3.old/execute.txt
+labs/lab3.old/lab3.html~
+labs/lab3.old/display_tabled_data.txt
+labs/lab3.old/lab3.html
+labs/lab3.old/index.txt
+labs/lab5
+labs/lab5/lab5.html
+labs/lab5/lab5.html~
+labs/lab3
+labs/lab3/index.html~
+labs/lab3/index.html
+labs/lab4.old
+labs/lab4.old/index.html~
+labs/lab4.old/complex.sql
+labs/lab4.old/demo1.sql
+labs/lab4.old/demo2.sql
+labs/lab4.old/lab4.html~
+labs/lab4.old/index.html
+labs/lab4.old/complex.sql~
+labs/1
+labs/lab1.html
+index.html
+oldStuff
+oldStuff/CSC 191 Final Project First.doc
+oldStuff/tnsnames.ora
+oldStuff/CSC_191_SYLLABUS.doc
+oldStuff/lab2
+oldStuff/lab2/lab2_teams.html~
+oldStuff/lab2/create_am.sql
+oldStuff/lab2/lab2_teams.html
+oldStuff/lab2/lab2.html
+oldStuff/lab2/de.html~
+oldStuff/lab2/am.html~
+oldStuff/lab2/extra.html~
+oldStuff/lab2/am.html
+oldStuff/lab2/sr.html
+oldStuff/lab2/create_sr.sql~
+oldStuff/lab2/lab2.html~
+oldStuff/lab2/create_teams.sql
+oldStuff/lab2/extra.html
+oldStuff/lab2/create_am.sql~
+oldStuff/lab2/create_de.sql
+oldStuff/lab2/de.html
+oldStuff/lab2/create_sr.sql
+oldStuff/lab2/sr.html~
+oldStuff/lab2/create_de.sql~
+oldStuff/City Jail
+oldStuff/City Jail/CityJail_8.sql
+oldStuff/City Jail/CityJail_5.sql
+oldStuff/Chapter PP deck
+oldStuff/Chapter PP deck/sql11g_05.ppt
+oldStuff/Chapter PP deck/sql11g_01.ppt
+oldStuff/Chapter PP deck/sql11g_07.ppt
+oldStuff/Chapter PP deck/sql11g_10.ppt
+oldStuff/Chapter PP deck/sql11g_02.ppt
+oldStuff/Chapter PP deck/sql11g_13_CE.ppt
+oldStuff/Chapter PP deck/sql11g_03.ppt
+oldStuff/Chapter PP deck/sql11g_12.ppt
+oldStuff/Chapter PP deck/sql11g_04.ppt
+oldStuff/Chapter PP deck/sql11g_11.ppt
+oldStuff/Chapter PP deck/sql11g_09.ppt
+oldStuff/Chapter PP deck/sql11g_06.ppt
+oldStuff/Chapter PP deck/sql11g_08.ppt
+oldStuff/CSC 191 Final Project.pdf
+oldStuff/CSC191_Nov10_agenda.htm
+oldStuff/CSC191_Nov16_agenda.htm
+CSC_191_SYLLABUS_FALL_2011_updated.doc
+sum_of_categories.html
+howto
+howto/howto_setup.html
+howto/images
+howto/images/screen_1.png
+howto/images/hc_screen_3.png
+howto/images/hc_screen_7.png
+howto/images/screen_6.png
+howto/images/screen_3.png
+howto/images/hc_screen_5.png
+howto/images/screen_8.png
+howto/images/hc_screen_2.png
+howto/images/screen_5.png
+howto/images/screen_4.png
+howto/images/screen_2.png
+howto/images/hc_screen_1.png
+howto/images/hc_screen_6.png
+howto/images/screen_9.png
+howto/images/sqldeveloper_preferences.jpg
+howto/images/hc_screen_4.png
+howto/images/screen_7.png
+howto/howto_setup.html~
+JLDB files
+JLDB files/JLDB_Build_9.sql
+JLDB files/JLDB_Drop.sql
+JLDB files/JLDB_Build_10.sql
+JLDB files/JLDB_Build.sql
+JLDB files/JLDB_Build_5.sql
+JLDB files/JLDB_Build_11.sql
+JLDB files/JLDB_Build_12.sql
+JLDB files/JLDB_Build_8.sql
+images
+images/gold_star.jpg
+images/dontpanic.jpg
+chapters
+chapters/chapter1
+chapters/chapter1/role_playing_job_descriptions.html
+chapters/chapter1/CSC191_Chap1_agenda.htm
+chapters/chapter1/lecture_notes.html~
+chapters/chapter1/role_playing_job_descriptions.html~
+chapters/chapter1/CSC191_Chap1_agenda.htm~
+chapters/chapter1/lecture_notes.html
+chapters/CSC191_chap2_chap3.ppt
+chapters/chapter7
+chapters/chapter7/index.html~
+chapters/chapter7/CSC191_Chap7_agenda.htm
+chapters/chapter7/index.html
+chapters/chapter7/CSC191_Chap7_agenda.htm~
+chapters/chapter7/homework_hints.txt~
+chapters/chapter7/homework_hints.txt
+chapters/chapter4
+chapters/chapter4/index.html
+chapters/chapter4/chap4_homework_hints.html
+chapters/chapter4/city_jail_simple_diagram.ppt
+chapters/chapter4/CSC191_Chap4_agenda_teacher.htm
+chapters/chapter4/city_jail_simple_diagram.jpg
+chapters/chapter4/CSC191_Chap4_agenda_teacher.htm~
+chapters/chapter12
+chapters/chapter12/CSC191_Chap12_agenda.htm
+chapters/chapter11
+chapters/chapter11/homework_hints.txt
+chapters/chapter11/CSC191_chap11_agenda.htm
+chapters/chapter6
+chapters/chapter5
+chapters/chapter5/index.html~
+chapters/chapter5/chap5_acctmanager_table_desc.png
+chapters/chapter5/index.html
+chapters/chapter5/view_blocking_sessions.sql
+chapters/chapter5/chap5_agenda_teacher.html
+chapters/chapter5/homework_hints.txt~
+chapters/chapter5/chap5_acctmanager_table_constraints.png
+chapters/chapter5/chap5_agenda_teacher.html~
+chapters/chapter5/homework_hints.txt
+chapters/chapter3
+chapters/chapter3/5-person-group.html~
+chapters/chapter3/chap3.sql
+chapters/chapter3/4-person-group.html~
+chapters/chapter3/CSC191_Chap3_agenda.htm
+chapters/chapter3/5-person-group.html
+chapters/chapter3/JLDB_Build.sql
+chapters/chapter3/chap3_homework_hints.txt~
+chapters/chapter3/chap3.sql~
+chapters/chapter3/chap3_homework_hints.txt
+chapters/chapter3/4-person-group.html
+chapters/chapter3/CSC191_Chap3_agenda.htm~
+chapters/chapter3/Chapter3.pdf
+chapters/chapter3/CSC191_Chap3_agenda.htm.bak
+chapters/chapter2
+chapters/chapter2/CSC191_Chap2_agenda.htm~
+chapters/chapter2/Chapter2.pdf
+chapters/chapter2/CSC191_Chap2_agenda.htm
+chapters/chapter2/chap2_homework_hints.txt
+chapters/chapter2/chap2.sql
+chapters/chapter14
+chapters/chapter13
+chapters/chapter13/CSC191_Chap13_agenda.htm
+chapters/chapter10
+chapters/chapter10/index.html~
+chapters/chapter10/index.html
+chapters/chapter10/homework_hints.txt
+chapters/CSC191_chap2_chap3.pptx
+chapters/chapter8
+chapters/chapter9
+chapters/chapter9/index.html~
+chapters/chapter9/index.html
+chapters/chapter9/homework_hints.txt~
+chapters/chapter9/homework_hints.txt
+final
+final/old
+final/old/002.pdf
+final/old/003.pdf
+final/old/001.pdf
+final/index.html~
+final/index.html
+final/1
+final/final_lab.html~
+final/final_lab.html
+resources
+resources/sqldeveloper-3.0.04.34-no-jre.zip
+resources/instantclient-basic-win32-11.1.0.7.0.zip
+resources/sqldeveloper.html
+resources/instantclient-sqlplus-win32-11.1.0.7.0.zip
+resources/ins.sql
+resources/sqldeveloper-2.1.1.64.45-no-jre.zip
+resources/ANSI Join SQL.ppt
+resources/install_sqldeveloper.htm~
+resources/sqldeveloper.html~
+resources/CSC191_Chapter_14_exercises.htm
+resources/Chapter_14_online.pdf
+resources/sqldeveloper64-2.1.1.64.45-no-jre.zip
+resources/jdk-6u21-windows-i586.exe
+resources/Examview.zip
+resources/sqldeveloper-3.0.04.34-macosx.tar.gz
+resources/jdk-6u21-windows-x64.exe
+resources/screen1.bmp
+resources/screen3.bmp
+resources/install_sqldeveloper.htm
+resources/sqldeveloper-2.1.1.64.45.zip
+resources/screen2.bmp
+resources/chap_4_drop.sql
+resources/sqldeveloper-3.0.04.34-1.noarch.rpm
+resources/screen4.bmp
+City_Jail
+City_Jail/CityJail_8.sql
+City_Jail/j.sql
+City_Jail/CityJail_5.sql
+City_Jail/answers
+City_Jail/answers/chap8.txt
+City_Jail/answers/chap9.txt
+City_Jail/answers/chap11.txt
+City_Jail/answers/chap10.txt

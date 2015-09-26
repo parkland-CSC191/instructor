@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>CSC191: Lab 3</title>
+
+<style>
+<!--
+ body {font-family:Calibri;}
+</style>
+
+</head>
+
+<body>
+<h1>CSC 191</h1>
+<h2>Lab 3</h2>
+
+<span style="font-size:120%; font-weight:bold; font-style:underline">Context</span> <br>
+This lab covers Chapters 7-8; also using knowledge from previous chapters as well.
+<p>
+
+<span style="font-size:120%; font-weight:bold; font-style:underline">Objectives</span> <br>
+Your job is to create a php-based web frontend for the JustLee Book Store. Specifically, you will be designing and writing the SQL to support the front-end functions.
+<br>
+<table border="0">
+	<tr><td><b>Web Front End</b></td><td><a href="http://onyx.csit.parkland.edu/~oracle/csc191/lab3/">onyx.csit.parkland.edu/~oracle/csc191/lab3/</a></td></tr>
+	<tr><td><b>Online Google Spreadsheet</b></td><td><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdFBvSlFyZHpfN1hLS2puQjFNZVozR1E&hl=en_US">https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdFBvSlFyZHpfN1hLS2puQjFNZVozR1E&hl=en_US</a></td></tr>
+</table>
+
+<ol>
+	<li>Starting point: <a href="http://onyx.csit.parkland.edu/~oracle/csc191/lab3/">blank slate</a></li>
+	<li>Determine what functionality is needed for a potential customer</li>
+	<li>Research what practical steps need to be taken to act upon requirements</li>
+	<li>Implement steps in SQL</il>
+</ol>
+<p>
+<br>
+
+<span style="font-size:120%; font-weight:bold; font-style:underline">Step 1: Design</span> <br>
+<ul>
+	<li>Do some brainstorming. What do customers want to do in a bookstore?</li>
+	<li>After brainstorming, decide which ideas should be "requirements". Which ones are you actually going to implement?</li>
+	<li>Create a generic flowchart that demonstrates how your ideas will fit into the application</li>
+</ul>
+<p>
+<br>
+
+<span style="font-size:120%; font-weight:bold; font-style:underline">Step 2: Research</span> <br>
+<ul>
+	<li>Divide the requirements and form subgroups to tackle each requirement</li>
+	<li>For each requirement, decide which tables will be touched and what privileges are needed to allow the function of the requirement</li>
+	<li>Keep in mind that you want the privileges as restrictive as possible</li>
+</ul>
+<p>
+<br>
+
+
+<span style="font-size:120%; font-weight:bold; font-style:underline">Step 3: Implement</span> <br>
+<ul>
+	<li><a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdFBvSlFyZHpfN1hLS2puQjFNZVozR1E&hl=en_US">Google Doc</a>
+	<li>For each requirement/subgroup, determine the SQL needed</li>
+	<li>Record SQL in the <a href="https://docs.google.com/spreadsheet/ccc?key=0Au3HcOmd32pEdFBvSlFyZHpfN1hLS2puQjFNZVozR1E&hl=en_US">online spreadsheet</a></li>
+	<li>Go ahead and issue grants via SQL Developer</li>
+	<li>For SQL that support button actions, the instructor will insert the code in php</li>
+</ul>
+<p>
+<br>
+
+<span style="font-size:120%; font-weight:bold; font-style:underline">Step 4: Testing</span> <br>
+<ul>
+	<li>After instructor has put the code in php, we can all push buttons and try it out</li>
+	<li>Take note of anything that does not work as expected, or if some other tweak is desired</li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>CSC 191: Chapter 5 - DML and Transaction Control</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 5 - DML and Transaction Control</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+	<li>Cover any outstanding questions from the homework or previous chapters.
+	<ul>
+		<li>Careful about reading homework thoroughly; several people missed that NAME is a NUMBER
+		<li>Also need to read the entire chater; had several questions about how to change a FOREIGN KEY to DELETE CASCADE after it was already created
+		<li>Lastly, the Homework Checker is meant to <b>submit</b> homework. Some of your spending an obscene amount of time resubmitting over and over and over, tweaking your queries until they are "perfect". That can lead to a lot of lost sleep and focusing on other areas of your life. I can't stop you from doing that, but now I fear that I am enabling Obsessive Compulsive Disorders.
+	</ul>
+<li>Today we will be covering Chapter 5
+<ul>
+<li>INSERT
+<li>Virtual columns
+<li>Using quotes
+<li>Subqueries
+<li>UPDATE
+<li>Substitution Variables
+<li>DELETE
+<li>COMMIT, ROLLBACK, SAVEPOINT (transaction control)
+<li>SELECT FOR UPDATE
+</ul>
+</ul>
+
+<p>
+
+[10 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 5</b>
+<ul>
+ <li>Pop Quiz: Who likes to input data? What percentage of the time do you think application developers and database administrators spend moving data into and out of the database?</li>
+ <li>Why do <b><i>you</i></b> think it is important to know Data Modification Language (DML) and Transaction Control?
+ <li>Real World has several different types of jobs that relate to SQL and databases:
+ <ul>
+	  <li>Report writers
+	  <li>application developers
+	  <li>DBAs
+	  <li>Managers
+	  <li>A whole bunch of end users
+  </ul>
+  <li>Before we go much further, we have to synchronize our tables<br>
+  <ul>
+	  <li>Using Homework Checker, in the middle section ("<b>Reset your tables</b>")
+  </ul>
+</ul>
+
+<p>
+<b>INSERT</b><br>
+We have a brand new table in this chapter, but no data. We are going to remedy that situation. There are a few different ways of inserting data that we will cover in this chapter:
+<ul>
+	<li>"normal" insert
+	<li>insert specific columns by name
+	<li>insert as a select from a rowsource
+</ul>
+
+In addition, there are a few advanced techniques that are not covered in the chapter:
+<ul>
+<li>SQL*Loader
+<li>import/export
+<li>datapump
+<li>API
+</ul>
+
+<p>
+Special notes. When inserting data, not all columns have to be filled. What are the requirements?
+<ul>
+	<li>Virtual columns
+	<li>column can be defined as accepting NULL values (ie, not NOT NULL)
+</ul>
+
+<p>
+So before we begin adding data to this new table, let's take a good hard look at ACCTMANAGER. The structure is listed on page 139, or you can do a "desc ACCTMANAGER" command. Or look at it in SQL*Developer, which will also show you the constraints. Which are important. :)
+<pre>CREATE TABLE acctmanager
+(amid CHAR(4),
+ amfirst VARCHAR2(12)  NOT NULL,
+ amlast VARCHAR2(12)  NOT NULL,
+ amedate DATE DEFAULT SYSDATE,
+ amsal NUMBER(8,2),
+ amcomm NUMBER(7,2) DEFAULT 0,
+ region CHAR(2),
+  CONSTRAINT acctmanager_amid_pk PRIMARY KEY (amid),
+  CONSTRAINT acctmanager_region_ck CHECK (region IN ('N', 'NW', 'NE', 'S', 'SE', 'SW', 'W', 'E')));</pre>
+<img src="chap5_acctmanager_table_desc.png"><br>
+<img src="chap5_acctmanager_table_constraints.png"><br>
+
+<p>
+Students log into the database as SCOTT/TIGER so we are all using the same account. Every one is going to insert data at the same time. Fun stuff.
+
+<p>
+Instructor will use <a href="view_blocking_sessions.sql">view_blocking_sessions.sql</a> to watch blocking locks.
+
+<p>
+Page 142 shows three (3) ways to insert a NULL value. The last is the most common, in my experience.
+<ul>
+	<li><pre>insert into acctmanager
+	values ('L500', 'MANDY', 'LOPEZ', '01-OCT-09', 47000, 1500);</pre>
+	<li><pre>insert into acctmanager (amid, amfirst, amlast, amedate, amsal, amcomm, region)
+	values ('L500', 'MANDY', 'LOPEZ', '01-OCT-09', 47000, 1500, '');</pre>
+	<li><pre>insert into acctmanager
+	values ('L500', 'MANDY', 'LOPEZ', '01-OCT-09', 47000, 1500, NULL);</pre>
+</ul>
+
+<p>
+<br>
+<b>Diversion: "Virtual Columns"</b><br>
+<ol>
+	<li>After all the locks are gone, create the virtual column (pg. 144):<pre>alter table acctmanager add (amearn as (amsal + amcomm);</pre>
+	<li>Students are to try running their queries again. Fix as appropriate.
+	<li>When we enter (insert) character data, we use single quotes around the value. Pg 147 shows how to insert data that has a single quote in the data. I am not going to spend much time on this since the book has an excellent example.
+</ol>
+
+<p>
+<br>
+<b>Inserting with a subquery</b><br>
+<ol>
+	<li>Students help build a query that inserts data into ACCTMANAGER such that we:
+<ul>
+	<li>do not violate the Primary Key
+	<li>Switch AMFIRST with AMLAST
+</ul>
+
+<li>The subquery can be any valid query, as long as the "output" columns are compatible with the "input" columns.
+
+<li>Provide 3 levels of complexity for students to try out on their own (in class):
+<ol>
+	<li>insert as a select from dual
+	<li>insert as a select from CUSTOMERS
+	<li>insert as select only Jennifer Smith from CUSTOMERS
+</ol>
+</ol>
+
+
+<p>
+<b>UPDATE</b>: Changing existing rows<br>
+<ol>
+	<li>Each student is going to log back in as SCOTT, but this time we are looking at the CUSTOMERS table. Remember what happens when all students tried to insert rows at the same time? One way around this is to avoid a table lock.
+	<li>First, every one issues a SAVEPOINT command. I highly recommend naming your SAVEPOINT (ie, savepoint a). If you run multiple statements, it might be good to savepoint each one, but don't forget to use different savepoint names.
+	<li>Each student is assigned a customer # that corresponds to their in-class PC. And now they are to update SCOTT.CUSTOMERS but only for their respective CUSTOMER#. They are to change the FIRSTNAME column to their own name, and can make whatever other changes they wish.
+	<li>Por ejemplo:
+	<pre>savepoint one;
+update customers set firstname = 'Charles' where customer# = 1;
+select customer#, firstname from customers; </pre>
+	<li><b>ODD</b> numbers are to rollback, <b>EVEN</b> numbers are to commit
+	<li>Lastly, everyone do another select:
+	<pre>select customer#, firstname from customers; </pre>
+</ol>
+
+
+<p>
+<b>Substitution Variables</b><br>
+Let's take another diversion and talk a little about homework questions 6 & 7. Obviously, one cannot "save" homework from the homework checker. So what do I expect? Basically, skip the "save" part and just execute the query, putting comments in to let me know what substitution vars you used.
+
+<p>
+<b>DELETE</b><br>
+<ol>
+	<li>At this point, DELETE is pretty simple. :)
+	<li>Choose a table to delete from (CUSTOMERS, ACCTMANAGER, BOOKORDERS, etc)
+	<li><b>DO NOT COMMIT!!</b> Yet.
+	<li>Before we commit the transaction, let's talk about what's going to happen.
+	<ul>
+		<li>Some of you tried to DELETE the entire table, some tried to DELETE a primary key
+		<li>If you are being blocked, then your session is hanging until some one else commits
+		<li>Some of you are completed unaffected and you see a message that your operation was successful
+	</ul>
+</ol>
+
+<br>
+<b>Mention caveats for this weeks homework</b> <br>
+<ul>
+	<li>You <b>WILL</b> get red on this one! :) It's ok, really
+	<li>The hints are in the homework checker and <a href="homework_hints.txt">here</a>
+	<li>Use comments to "describe" errors. Especially relevant for questions 4,5 and 6,7
+	<li>For substitution variables, Homework Checker can't do 'em. So just submit the query as it works in SQL Developer.
+	<li>The Advanced has a lot of small pieces in it. Again, refer to the <a href="homework_hints.txt">hints</a>
+	<li>Since HC does not accept subvars, you have to work around it for the Advanced Challenge. The "answer key" uses one insert perl Category. It is possible to use a subquery; if you do that, use the "skip;" command to fill in the other insert statements. If this makes no sense, ask. :)
+</ul>
+
+<p>
+<br>
+<b>Assignments</b>
+<ul>
+<li>Chapter 5 Hands-on due by 5:pm Sunday, September 25 (submitted electronically)
+<li>Chapter 5 Advanced Challenge due by 5:pm Sunday, September 25 (submitted electronically)
+<li>We have our first in-class LAB next week. No need to read Chapter 6. Yet.
+</ul>
+
+
+
+</body>
+<html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>CSC 191: Chapter 3 - Creating Tables</title>
+<style>
+<!--
+body {font-family:"Calibri";}
+
+span.sql {font-family:"Consolas";
+	background:silver;
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSC 191: Chapter 3 - Creating Tables</h1>
+
+
+<b>Class Logistics</b>
+<ul>
+	<li>Collect any outstanding homework. Each student should have a question from Chapter 2 or Chapter 3. Go over them.
+	<li>Today we will be covering Chapter 3
+	<ul>
+		<li>create table</li>
+		<li>create table as select...  (aka, CTAS)</li>
+		<li>add column</li>
+		<li>rename table</li>
+		<li>truncate table</li>
+		<li>drop table</li>
+	</ul>
+	<li><b><i>IF</i></b> we have time, we will talk about <b>modifying and deleting columns</b></li>
+	<li>We will <b><i>NOT</i></b> cover "mark colum as unused" nor "flashback". The reason is that these are Oracle-specific conventions and not applicable to MS SQL Server or MySql. I am happy to entertain questions, though.
+</ul>
+
+<p>
+
+[5 minute break near 5:00 pm ]
+<p>
+
+<b>Chapter 3</b>
+<ul>
+	<li>Pop Quiz (teams do datatypes)</li>
+	<li>Those in the "Account Managers" group may want to pay attention to this chapter.</li>
+	<li>Students will be working in SQL Developer; students can type out the commands if they want to, many of them are provided <a href="http://www.csit.parkland.edu/~cschultz/csc191/chapters/chapter3/chap3.sql">online</a>.</li>
+	<li><b>Creating tables</b></li>
+	<ul>
+		<li>In this book, anytime you create a table, you will pretty be told exactly how to do it; not much "planning" or modeling on your part.</li>
+		<li>create acctmanager table (p 66-67)</li>
+		<li>create cust_mkt table (p 67-68)</li>
+		<li>Notice the difference between these two approaches. Both result in a table with well-defined columns and datatypes. In the former, the user explictly declares the datatype and column name. With the exception of AMEARN; this column is a "virtual column" (aka, derived column) - this feature is new to Oracle 11g, hence it is not compatible with previous versions of Oracle, nor with SQL Server or MySQL.
+		The latter example demonstrates "inheritance", or acquiring a table definition from another source. This showcases how SQL queries are treated - the output typically has a table-like structure, even though you only "see" text that might be formatted according to the tool you are using (SQL Developer, sql*plus, etc). Later on we will learn about some other differences between these two approaches, like creating constraints in Chapter 4.</li>
+		<li>When we create tables, it is a good practice to be very aware of your datatypes. Even though this book will usually tell you what you need, I highly encourage you to engage your grey matter and think if it makes sense. Sure, a birth date column <b><i>can</i></b> be a character field (ie, varchar2(25)), but does that really work out for the best?</li>
+		<li>Page 65 briefly talks about USER_TABLES and something called the "data dictionary". This is a very important piece of any database management system (DBMS); exploring it fully is outside the scope of this class, but those of you in CSC 192 will become more familiar with it. Basically, it is "metadata", data about data; it describes or defines objects, processes, users... <b>things</b>. When you have a moment, do a "select *" on things like USER_OBJECTS or ALL_TABLES.</li>
+		<li>Page 69 introduces the DESCRIBE or DESC command. This is specific to Oracle as well. In fact, it is specific to sql*plus, but some tools (SQL Developer, homework check) duplicate the functionality. It is a great way to see the structure of the table without clicking a bunch of buttons in a GUI.</li>
+	</ul>
+	<li><b>Modifying tables</b></li>
+	<ul>
+		<li>Usually when we say "modify a table", we are talking about the structure of the table, not the data or information inside it. Thus we mean altering the characteristics. Chapter 4 will continue this thread, but that is two weeks away.
+		<li>The syntax for adding a column and modifying an existing column are almost identical; you give either the ADD or MODIFY keywork, followed by a list of one or more columns in parenthesis, which consists of a column name and a datatype. The chapter has several basic examples of adding columns, as you noticed when you read it. *grin*</li>
+		<li>The paragraph on page 74 has a very important point - <b>DEFAULT values only affect new data</b>, not existing data.</li>
+		<li>We will circle back to Dropping columns if we have time.</li>
+		<li>When would you ever want to modify a table? Usually what happens is that a concept starts small, and as more and more features are added into the application, the underlying structure needs to be adapted. Sometimes these are small changes, sometimes large changes. The book talks about modifying a varchar2 field to be larger to accomodate longer names.</li>
+		<li>The biggest pain is if your table already has data - making changes to an empty table is quite trivial. But once you start putting data in their, it becomes a whole new ballgame. In a slightly more complex situation, it is possible to change the datatype of existing data; a quick way to do that is to rename the table (what, we didn't talk about renaming talbes, yet?!?), create a new table, then copy the data from the old table to the new.</li>
+	</ul>
+	<li><b>Renaming tables</b></li>
+	<ul>
+		<li>This is quite straight forward. One gotcha I'll mention here is that the fuller syntax includes the owner name, <b>but only for the <i>oldtablename</i></b> - you cannot change the owner of the table with this command.</li>
+	</ul>
+	<li><b>Truncating tables</b></li>
+	<ul>
+		<li>Deleting data from a table is like crumpling up paper and throwing it in the garbage. Truncating a table is like completely incinerating the paper. Which one sounds like more fun? *smile*</li>
+		<li>One other major difference between "deleting" and "truncating". Deleting data is a DML statement, and can act on any number of rows (anywhere between none or all). Truncating a table is a DDL statement, and you have no choices about what data it acts on (all of it!).</li>
+	</ul>
+	<li><b>Dropping a table</b></li>
+	<ul>
+		<li>I so much wish the author had not said "<del>Deleting a table</del>". That just makes it confusing in my opinion. Let us call it "Dropping a table". Because that is exactly what you do.</li>
+		<li>The book talks about a "recycle bin" and "flashback". I am not going to talk about these two features because:</li>
+		<ol>
+			<li>They are Oracle-specific</li>
+			<li>They don't have much to do with SQL at all; it something that belongs in CSC 192</li>
+			<li>The <i>Recycle Bin</i> just makes things confusing; I recommend you never use it. Unfortunately, it is on by default, so I have to turn it off explicitly.</li>
+			<li><b>Flashback</b> is awesome! It is basically a giant "UNDO" command. But the only time this book talks about Flashback is in the context of Dropping (and restoring) tables, which is not only a discredit to Flashback, but only relies on the <i>Recycle Bin</i> (see point #3).</li>
+			</ol>
+		</ul>
+	</ul>
+</ul>
+
+
+<p>
+
+</body>
+<html>

@@ -1,0 +1,54 @@
+<?php
+// phpinfo();
+include("../display_tabled_data.php");
+
+$user = $_POST['user'];
+$pword = $_POST['pword'];
+$oracle_on_localhost = TRUE;	// The DB is on this host
+$db = 'CSC191';			// Default database
+$sql = '';
+
+date_default_timezone_set('America/Chicago');   // Required timezone setting as of PHP 5.1
+$date = date("Ymd.His");                        // current timestamp in YYYYMMDD.HH24MISS format
+$path = getenv('PATH');                         // PATH env
+$oracle_home = getenv('ORACLE_HOME') . "/bin";  // ORACLE_HOME env
+putenv("PATH=$path:$oracle_home");              // Put ORACLE_HOME/bin in the PATH so we can find sqlplus
+
+function execute_sql($sql) {
+  // Connect to the database; raise an error if unsuccessful and report error
+  global $user, $pword, $db;
+  print("<pre>$sql</pre>");
+  $conn = oci_connect($user, $pword, $db);
+  if (!$conn) {
+     $e = oci_error();
+     print "<pre>";
+     print htmlentities($e['message'], ENT_QUOTES);
+     print "</pre>";
+  } else {
+   $stid = oci_parse($conn, $sql);
+   $r = oci_execute($stid);
+   $nrows = oci_fetch_all($stid, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+   display_tabled_data($data,"no");
+   oci_close($conn);
+  }
+}
+
+if ($_POST['ViewAllBooks']) {
+ include("ViewAllBooks.php");
+ execute_sql($sql);
+}
+
+if ($_POST['ViewByCategory']) {
+ $category = $_POST['category'];
+ include("ViewByCategory.php");
+ execute_sql($sql);
+}
+
+if ($_POST['InsertBook']) {
+ include("insert.php");
+ execute_sql($sql);
+ include("ViewAllBooks.php");
+ execute_sql($sql);
+}
+
+?>
