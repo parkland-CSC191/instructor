@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>CSC 191 - Calendar</title>
+	<meta name="description" content="CSC 191" />
+	<meta name="keywords" content="sql, class, parkland" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+<style>
+table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    font-size: 1.4em;
+    border: 1px solid #9D2900;
+    padding: 3px 7px 2px 7px;
+}
+
+th {
+    font-size: 1.5em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #9D2900;
+    color: #ffffff;
+}
+
+/* Cells in even rows (2,4,6...) are one color */
+tr:nth-child(even) td { background: #FFFFFF; }  
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */
+tr:nth-child(odd) td { background: ##F5EAE6; } 
+
+tr td:hover { background: #5E1900; color: #ffffff; } /* Hover cell effect! */
+
+.inactive {
+	background-color: #E2BFB2;
+}
+
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1><a href="#">CSC 191</a></h1>
+		<ul id="menu">
+			<li class="active"><a href="#">home</a></li>
+			<li><a href="lessons/">lessons</a></li>
+			<li><a href="labs/">labs</a></li>
+			<li><a href="help.html">a little help?</a></li>
+		</ul>
+	</div>
+
+	<div id="teaser">
+		<div class="wrap">
+			<div id="image"></div>
+			<div class="box">
+				<h2>Calendar</h2>
+			</div>
+		</div>
+	</div>
+
+	<div>
+<table> <tr> <th>Week</th><th>Date</th><th>Agenda</th><th>Notes</th></tr>
+<tr>
+
+<tr><td>1</td><td>September 15</td><td><a href="Units/1">Overview of class; setting up resources</a></td><td>introduction, setting expectations, getting a feel for the flow of what "class" looks like</td></tr>
+
+<tr><td>2</td><td>September 22</td><td><a href="Units/2">Understanding tables, rows, columns, relationships</a></td><td>overview and explanation of terms, how things fit together</td></tr>
+
+<tr><td>3</td><td>September 29</td><td><a href="Units/3">Selecting data from one table; WHERE Clause</a></td><td></td></tr>
+
+<tr><td>4</td><td>October 6</td><td><a href="Units/4">Specifying columns; ordering data</a></td><td></td></tr>
+
+<tr><td>5</td><td>October 13</td><td><a href="Units/5">Using simple functions</a></td><td></td></tr>
+
+<tr><td>6</td><td>October 20</td><td><a href="Units/6">Using group functions</a></td><td></td></tr>
+
+<tr><td>7</td><td>October 27</td><td><a href="Units/7">Selecting data from multiple tables</a></td><td>Midterm grades due by 11/1</td></tr>
+
+<tr><td>8</td><td>November 3</td><td>Set operators, subqueries</td><td></td></tr>
+
+<tr><td>9</td><td>November 10</td><td>Delete, insert, update</td><td></td></tr>
+
+<tr><td>10</td><td>November 17</td><td>Understanding constraints</td><td></td></tr>
+
+<tr class=inactive><td></td><td>November 24</td><td>No class: Thanksgiving break starts the next day</td><td></td></tr>
+
+<tr><td>11</td><td>December 1</td><td>Stored procedures</td><td>Content will depend on students</td></tr>
+
+<tr><td>12</td><td>December 8</td><td>Complex SQL</td><td>Content will depend on students</td></tr>
+
+<tr><td>13</td><td>December 15</td><td>Final Project / Class party</td><td></td></tr>
+
+<tr class=inactive><td></td><td>December 21</td><td>Grades due</td><td></td></tr>		
+	</div>
+		
+</body>
+</html>
